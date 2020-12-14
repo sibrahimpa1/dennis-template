@@ -1,11 +1,9 @@
 body {
-  background: $body-background-color;
-  color: $foreground-color;
   padding: 20px;
   font-family: 'DINP-R', arial, serif;
 }
 
 header {
-  background: red;
+  background: $brand-secondary;
   padding: 20px;
 }

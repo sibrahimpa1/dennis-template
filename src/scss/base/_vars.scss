@@ -1,19 +1,80 @@
-/**
- * Variables
-*/
+$breakpoints: (
+  "horizontal": (
+    "xs": 375px,
+    "sm": 500px,
+    "md": 700px,
+    "lg": 960px,
+    "xl": 1180px,
+    "xxl": 1200px,
+    "xxxl": 1440px
+  ),
+  "vertical": (
+    "xs": 300px,
+    "sm": 450px,
+    "md": 600px,
+    "lg": 750px,
+    "xl": 900px,
+    "xxl": 1100px
+  )
+);
 
-/* Typography */
-/* Breakpoints */
-/* Paths */
-/* Grid setup */
-/* Colour palette */
+// Base
+$base-font                : "Arial", Helvetica, Arial, sans-serif;
+$base-font-heading        : $base-font;
+$base-font-size           : 18px;
+$base-font-weight         : 400;
+$base-font-heading-weight : 600;
+$base-line-height         : 1.35;
+$border-radius            : 0px;
+
 $black: #000;
 $white: #fff;
 
-$body-background-color: #333;
-$foreground-color: #fff;
-$caption-color: #464646;
-$accent-color: #999;
-$link-color: #ec1f4e;
+$brand-primary: #00284A;
+$brand-secondary: #EDE7DB;
+$brand-blue: #D1ECF1;
+$brand-pink: #F8D7DA;
+$brand-yellow: #FFF3CD;
+$brand-green: #D4EDDA;
 
-/* Components */
+// Typography sizing
+$text-xs                  : 14px;
+$text-sm                  : 16px;
+$text-base                : 18px;
+$text-md                  : 24px;
+$text-lg                  : 28px;
+$text-xl                  : 36px;
+$text-xxl                 : 48px;
+$text-xxxl                : 60px;
+
+// Spacing
+$space-xs                 : 5px;
+$space-sm                 : 10px;
+$space                    : 20px;
+$space-bump               : 30px;
+$space-md                 : 40px;
+$space-lg                 : 60px;
+$space-xl                 : 100px;
+$space-xxl                : 150px;
+
+// Bg Colors
+$bg-color                 : #fff;
+$bg-footer                : #000000;
+
+// Borders
+$border-color             : #C9C9C9;
+
+// Transitions
+$base-transition          : all .3s ease-in-out;
+$base-transition-duration : .3s;
+$base-transition-function : ease-in-out;
+
+// Grid
+$grid-padding             : 20px;
+
+// Wrapper
+$wrapper-padding          : 20px;
+
+// Header
+$header-height-desktop    : 110px;
+$header-height-mobile     : 70px;
