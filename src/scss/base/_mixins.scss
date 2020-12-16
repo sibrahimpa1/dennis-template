@@ -1,6 +1,3 @@
-/**
- * Helper mixins
-*/
 /// Create media query below horizontal breakpoint
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -12,12 +9,14 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-below($max-breakpoint) {
-	$max-width: (get-breakpoint("horizontal", $max-breakpoint) - 1);
-	@media screen and (max-width: $max-width) {
-		@content;
-	}
+  $max-width: (get-breakpoint("horizontal", $max-breakpoint) - 1);
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
 }
+
 /// Create media query between horizontal breakpoints
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -30,13 +29,15 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-between($min-breakpoint, $max-breakpoint) {
-	$min-width: get-breakpoint("horizontal", $min-breakpoint);
-	$max-width: (get-breakpoint("horizontal", $max-breakpoint) - 1);
-	@media screen and (min-width: $min-width) and (max-width: $max-width) {
-		@content;
-	}
+  $min-width: get-breakpoint("horizontal", $min-breakpoint);
+  $max-width: (get-breakpoint("horizontal", $max-breakpoint) - 1);
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
 }
+
 /// Create media query above horizontal breakpoint
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -48,12 +49,14 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-above($min-breakpoint) {
-	$min-width: get-breakpoint("horizontal", $min-breakpoint);
-	@media screen and (min-width: $min-width) {
-		@content;
-	}
+  $min-width: get-breakpoint("horizontal", $min-breakpoint);
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
 }
+
 /// Create media query below vertical breakpoint
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -65,12 +68,14 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-below--vertical($max-breakpoint) {
-	$max-height: (get-breakpoint("vertical", $max-breakpoint) - 1);
-	@media screen and (max-height: $max-height) {
-		@content;
-	}
+  $max-height: (get-breakpoint("vertical", $max-breakpoint) - 1);
+  @media screen and (max-height: $max-height) {
+    @content;
+  }
 }
+
 /// Create media query between vertical breakpoints
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -83,13 +88,15 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-between--vertical($min-breakpoint, $max-breakpoint) {
-	$min-height: get-breakpoint("vertical", $min-breakpoint);
-	$max-height: (get-breakpoint("vertical", $max-breakpoint) - 1);
-	@media screen and (min-height: $min-height) and (max-height: $max-height) {
-		@content;
-	}
+  $min-height: get-breakpoint("vertical", $min-breakpoint);
+  $max-height: (get-breakpoint("vertical", $max-breakpoint) - 1);
+  @media screen and (min-height: $min-height) and (max-height: $max-height) {
+    @content;
+  }
 }
+
 /// Create media query above vertical breakpoint
 /// ---
 /// @require {variable} $breakpoints - Breakpoints
@@ -101,12 +108,14 @@
 ///       property: value;
 ///     }
 ///   }
+
 @mixin media-above--vertical($min-breakpoint) {
-	$min-height: get-breakpoint("vertical", $min-breakpoint);
-	@media screen and (min-height: $min-height) {
-		@content;
-	}
+  $min-height: get-breakpoint("vertical", $min-breakpoint);
+  @media screen and (min-height: $min-height) {
+    @content;
+  }
 }
+
 /// Create media query for high density displays
 /// ---
 /// @example scss - Usage
@@ -117,11 +126,13 @@
 ///       background-image: url("/path/file@2x.png");
 ///     }
 ///   }
+
 @mixin media-hd() {
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-		@content;
-	}
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    @content;
+  }
 }
+
 /// Create media query for ultra high density displays
 /// ---
 /// @example scss - Usage
@@ -132,36 +143,77 @@
 ///       background-image: url("/path/file@3x.png");
 ///     }
 ///   }
+
 @mixin media-uhd() {
-	@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx) {
-		@content;
-	}
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx) {
+    @content;
+  }
 }
+
+/// Add clearfix to element with floating children
+/// ---
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/
+/// ---
+/// @example scss - Usage
+///   selector {
+///     @include clearfix();
+///   }
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+/// Create keyframes
+/// ---
+/// @example scss - Usage
+///   selector {
+///    @include keyframes(fadeOut) {
+///     0% { opacity: 1; }
+///     90% { opacity: 0; }
+///   }
+///  }
+
+
 @mixin keyframes($animation-name) {
-	@-webkit-keyframes #{$animation-name} {
-		@content;
-	}
-	@-moz-keyframes #{$animation-name} {
-		@content;
-	}
-	@-ms-keyframes #{$animation-name} {
-		@content;
-	}
-	@-o-keyframes #{$animation-name} {
-		@content;
-	}
-	@keyframes #{$animation-name} {
-		@content;
-	}
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
 }
+
 /// Needed for @font-face
+
 @function str-replace($string, $search, $replace: "") {
 	$index: str-index($string, $search);
+
 	@if $index {
 		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
 	}
+
 	@return $string;
 }
+
 /// Create keyframes
 /// ---
 /// @example scss - Usage
@@ -177,73 +229,159 @@
 ///            url("fonts/Samplinal.woff2") format("woff2"),
 ///            url("fonts/Samplinal.woff") format("woff");
 ///   }
+
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
 	$src: null;
+
 	$extmods: (
 		eot: "?",
 		svg: "#" + str-replace($name, " ", "_")
 	);
+
 	$formats: (
 		otf: "opentype",
 		ttf: "truetype"
 	);
+
 	@each $ext in $exts {
 		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
 		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
 		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
 	}
+
 	@font-face {
 		font-family: quote($name);
 		font-style: $style;
 		font-weight: $weight;
-		src: $src;
-		font-display: swap;
+    src: $src;
+    font-display: swap;
 	}
 }
-@mixin clearfix() {
-	&:after,
-	&:before {
-		content: " ";
-		display: table;
-	}
 
-	&:after {
-		clear: both;
-	}
+@mixin square() {
+  &:before {
+    content: '';
+    float: left;
+    padding-top: 100%;
+  }
 }
-// Text selection
-@mixin text-selection($color-selection, $color-selection-bg) {
-	::-moz-selection {
-		// sass-lint:disable-line no-vendor-prefixes
-		background: $color-selection-bg;
-		color: $color-selection;
-		text-shadow: none;
-	}
 
-	::selection {
-		background: $color-selection-bg;
-		color: $color-selection;
-		text-shadow: none;
-	}
+@mixin visual-hide() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
-//Placeholders
-//Usage:
-//@include placeholder;
-@mixin placeholder {
-	// sass-lint:disable no-vendor-prefixes
-	::-webkit-input-placeholder {
-		@content
-	}
 
-	:-moz-placeholder {
-		@content
-	}
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
 
-	::-moz-placeholder {
-		@content
-	}
+@mixin calc-grid-column($index, $columns, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .u-size-#{$index}of#{$columns}#{$class} {
+      width: percentage(($index / $columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .u-push-#{$index}of#{$columns}#{$class} {
+      left: percentage(($index / $columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .u-push-0#{$class} {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .u-pull-#{$index}of#{$columns}#{$class} {
+      right: percentage(($index / $columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .u-pull-0#{$class} {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .u-offset-#{$index}of#{$columns}#{$class} {
+      margin-left: percentage(($index / $columns));
+    }
+  }
+}
 
-	:-ms-input-placeholder {
-		@content
-	}
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $columns, $class, $type);
+  }
+}
+
+
+// Create grid for specific class
+@mixin make-grid($class, $columns: 12) {
+  @include loop-grid-columns($columns, $class, width);
+  @include loop-grid-columns($columns, $class, pull);
+  @include loop-grid-columns($columns, $class, push);
+  @include loop-grid-columns($columns, $class, offset);
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
 }

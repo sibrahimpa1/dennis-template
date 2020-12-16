@@ -1,0 +1,37 @@
+.u-flex{
+  display: flex;
+}
+.u-flex-column{
+  flex-direction: column;
+}
+.u-flex-wrap{
+  flex-wrap: wrap;
+}
+
+.u-flex-jsb{
+  justify-content: space-between;
+}
+
+.u-flex-jc{
+  justify-content: flex-end;
+}
+
+.u-flex-jfe{
+  justify-content: flex-end;
+}
+
+.u-flex-jfs{
+  justify-content: flex-start;
+}
+
+.u-flex-ac{
+  align-items: flex-end;
+}
+
+.u-flex-afe{
+  align-items: flex-end;
+}
+
+.u-flex-afs{
+  align-items: flex-start;
+}

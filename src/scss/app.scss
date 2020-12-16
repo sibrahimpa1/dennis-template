@@ -1,21 +1,18 @@
-/* Core variables */
-@import 'base/vars';
-
-/* CSS Reset */
-@import 'base/reset';
-
-/* Fonts */
-@import 'base/fonts';
-
-/* Mixins, helpers and functions */
+@import 'base/variables';
+@import 'base/functions';
 @import 'base/mixins';
-
-/* Vendor */
+@import 'base/global';
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/wrapper';
+@import 'base/flex';
 
 /* Components */
+@import 'components/header';
+@import 'components/logo';
 
 /* Browser specific styles */
 @import 'dirty/hacks';
 
-/* Demo Page styles */
-@import 'demo';
+/* Page styles */
+@import 'homepage';

@@ -19,7 +19,7 @@ $breakpoints: (
 );
 
 // Base
-$base-font                : "Arial", Helvetica, Arial, sans-serif;
+$base-font                : "Segoe UI Regular", Arial, Helvetica, sans-serif;
 $base-font-heading        : $base-font;
 $base-font-size           : 18px;
 $base-font-weight         : 400;
@@ -40,7 +40,8 @@ $brand-green: #D4EDDA;
 // Typography sizing
 $text-xs                  : 14px;
 $text-sm                  : 16px;
-$text-base                : 18px;
+$text-sm2                 : 18px;
+$text-base                : 20px;
 $text-md                  : 24px;
 $text-lg                  : 28px;
 $text-xl                  : 36px;
@@ -53,9 +54,12 @@ $space-sm                 : 10px;
 $space                    : 20px;
 $space-bump               : 30px;
 $space-md                 : 40px;
+$space-md2                : 50px;
 $space-lg                 : 60px;
+$space-lg2                : 70px;
 $space-xl                 : 100px;
-$space-xxl                : 150px;
+$space-xxl                : 120px;
+$space-xxxl               : 140px;
 
 // Bg Colors
 $bg-color                 : #fff;
@@ -69,12 +73,5 @@ $base-transition          : all .3s ease-in-out;
 $base-transition-duration : .3s;
 $base-transition-function : ease-in-out;
 
-// Grid
-$grid-padding             : 20px;
-
 // Wrapper
 $wrapper-padding          : 20px;
-
-// Header
-$header-height-desktop    : 110px;
-$header-height-mobile     : 70px;

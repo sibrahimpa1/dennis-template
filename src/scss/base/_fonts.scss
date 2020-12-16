@@ -2,12 +2,31 @@
  * Fonts
 */
 
- //@include font-face(Samplinal, fonts/Samplinal, 500, normal, eot woff2 woff);
-@font-face {
-  font-family: 'DINP-R';
-  src: url("../fonts/DINPro-Regular.eot?") format("eot"),
-  url("../fonts/DINPro-Regular.woff") format("woff"),
-  url("../fonts/DINPro-Regular.ttf") format("truetype"),
-  url("../fonts/DINPro-Regular.svg#DINPro-Regular") format("svg");
-  font-style: normal;
-}
+ // @include font-face(Samplinal, fonts/Samplinal, 500, normal, eot woff2 woff);
+ @font-face {
+   font-family: 'Segoe UI Regular';
+   font-style: normal;
+   font-weight: normal;
+   src: local('Segoe UI Regular'), url('../fonts/Segoe UI.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: 'Segoe UI Italic';
+   font-style: italic;
+   font-weight: normal;
+   src: local('Segoe UI Italic'), url('../fonts/Segoe UI Italic.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: 'Segoe UI Bold';
+   font-style: normal;
+   font-weight: bold;
+   src: local('Segoe UI Bold'), url('../fonts/Segoe UI Bold.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: 'Segoe UI Bold Italic';
+   font-style: italic;
+   font-weight: bold;
+   src: local('Segoe UI Bold Italic'), url('../fonts/Segoe UI Bold Italic.woff') format('woff');
+ }

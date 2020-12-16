@@ -1,0 +1,21 @@
+.wrapper {
+	max-width: 1440px;
+	margin: auto;
+	width: 100%;
+	padding: 0 $wrapper-padding;
+	@include media-above('xs') {
+		max-width: 100%;
+	}
+	@include media-above('sm') {
+		max-width: get-breakpoint('horizontal', 'sm');
+	}
+	@include media-above('md') {
+		max-width: get-breakpoint('horizontal', 'md');
+	}
+	@include media-above('lg') {
+		max-width: get-breakpoint('horizontal', 'lg');
+	}
+	@include media-above('xxl') {
+    max-width: 1440px;
+	}
+}
