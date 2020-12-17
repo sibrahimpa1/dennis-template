@@ -13,7 +13,10 @@
     "url": "https://github.com/sibrahimpa1/dennis-template.git",
     "email": "sibrahimpa1@gmail.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "jquery": "^3.5.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",

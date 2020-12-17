@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HTML/CSS/JS Template</title>
 </head>
 
 <body>
 
-
 	<header class="header header--static">
 		<div class="wrapper">
-			<div class="header__inner u-flex u-flex-jsb">
-
+			<div class="header__inner u-flex u-flex-jsb u-flex-ac">
 				<div class="logo">
-					<img src="" alt="Logo"/>
+					<img src="" alt="Logo" />
 				</div>
-				<div class="header__nav u-flex u-flex-jfe u-flex-column u-flex-afe">
+				<div class="header__desktop header__nav u-flex u-flex-jfe u-flex-column u-flex-afe">
 					<div class="header__nav-top u-flex u-flex-jfe">
 						<div class="header__list u-flex u-flex-jfe">
-							<a href="#" class="header__list__item header__list__lang">EN</a>
+							<a href="#" class="header__list__item header__list__lang active">EN</a>
 							<a href="#" class="header__list__item header__list__lang">DE</a>
 						</div>
 						<div class="header__list u-flex u-flex-jfe">
@@ -29,7 +28,7 @@
 							<a href="#" class="header__list__item">Item</a>
 						</div>
 						<div class="header__list u-flex u-flex-jfe">
-							<div class="header__nav-dropdown header__list__item">Dropdown</div>
+							<div class="header__nav-dropdown header__list__item">Dropdown <i class="fas fa-chevron-down"></i></div>
 						</div>
 					</div>
 					<div class="header__nav-bottom">
@@ -37,19 +36,25 @@
 							<a href="#" class="header__list__item">Menu Item A</a>
 							<a href="#" class="header__list__item">Menu Item B</a>
 							<a href="#" class="header__list__item">Menu Item C</a>
-							<div class="header__nav-dropdown header__list__item">Menu Item D</div>
+							<div class="header__nav-dropdown header__list__item">Menu Item D <i class="fas fa-chevron-down"></i></div>
 						</div>
 					</div>
 				</div>
-				<div class="header__mobile">
-					mobile layout
-				</div>
-
+				<nav class="header__mobile nav--hamburger js-nav-hamburger">
+					<button class="hamburger hamburger--squeeze js-hamburger" type="button" aria-expanded="false" aria-label="Toggle navigation" aria-controls="nav-mobile">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</nav>
+				<nav class="nav--mobile js-nav-mobile" id="nav-mobile" role="navigation">
+					<div class="wrapper">
+						mobile slider conteeeent
+					</div>
+				</nav>
 			</div>
 		</div>
 	</header>
-
-
 
 </body>
 </html>

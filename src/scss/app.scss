@@ -7,9 +7,14 @@
 @import 'base/wrapper';
 @import 'base/flex';
 
+/* Vendors*/
+@import 'vendor/hamburgers/hamburgers';
+@import "vendor/fontawesome-free/css/all.css";
+
 /* Components */
 @import 'components/header';
 @import 'components/logo';
+@import 'components/nav';
 
 /* Browser specific styles */
 @import 'dirty/hacks';

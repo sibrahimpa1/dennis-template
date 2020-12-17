@@ -1,6 +1,7 @@
 import '../scss/app.scss';
 
-/* Your JS Code goes here */
+/* Font Awesome */
+import './fontawesome-free/js/all.js';
 
-/* Demo JS */
-import './demo.js';
+/* Global JS */
+import './global.js';

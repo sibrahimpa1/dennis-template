@@ -6,9 +6,6 @@
 	@include media-above('xs') {
 		max-width: 100%;
 	}
-	@include media-above('sm') {
-		max-width: get-breakpoint('horizontal', 'sm');
-	}
 	@include media-above('md') {
 		max-width: get-breakpoint('horizontal', 'md');
 	}
@@ -16,6 +13,9 @@
 		max-width: get-breakpoint('horizontal', 'lg');
 	}
 	@include media-above('xxl') {
-    max-width: 1440px;
+		max-width: get-breakpoint('horizontal', 'xxl');
+	}
+	@include media-above('xxxl') {
+		max-width: 1440px;
 	}
 }
