@@ -4,9 +4,10 @@
   transition: $base-transition;
   @include media-above("xs"){
     width: 200px;
+    max-width: 100%;
   }
   @include media-above("xxxl"){
-    width: 400px;
+    width: 300px;
   }
   img{
     width: 100%;

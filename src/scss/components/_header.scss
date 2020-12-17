@@ -1,7 +1,7 @@
 .header {
 	background-color: $brand-white;
 	width: 100%;
-
+	position: fixed;
 	&--static {
 		padding-top: $space;
 		padding-bottom: $space;
@@ -16,8 +16,6 @@
 	&--unpinned {
 		padding-top: $space;
 		padding-bottom: $space;
-		position: fixed;
-
 		.header__nav-top {
 			display: none;
 		}
@@ -26,7 +24,6 @@
 	&--pinned {
 		padding-top: $space;
 		padding-bottom: $space;
-		position: fixed;
 		@include media-below("lg") {
 			padding-top: $space;
 			padding-bottom: $space;

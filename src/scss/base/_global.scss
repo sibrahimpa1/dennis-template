@@ -1,8 +1,11 @@
 body {
 	padding: 20px;
 	background: #efefef;
-	min-height: 200vh;
+	.content{
+		min-height: 100vh;
+	}
 }
+
 
 h1,
 h2,
