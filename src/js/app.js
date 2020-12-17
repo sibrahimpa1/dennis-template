@@ -1,8 +1,9 @@
 import '../scss/app.scss';
 
-/* Font Awesome */
+/* External scripts */
 import './fontawesome-free/js/all.js';
-import Headroom from './headroom.js';
+import './headroom/headroom.js';
+import './headroom/jQuery.headroom.js';
 
 /* Global JS */
 import './global.js';

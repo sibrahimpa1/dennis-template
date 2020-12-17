@@ -2,7 +2,7 @@
 	background-color: $brand-white;
 	width: 100%;
 	position: fixed;
-	&--static {
+	&.headroom--static {
 		padding-top: $space;
 		padding-bottom: $space;
 		min-height: 100px;
@@ -12,8 +12,8 @@
 		}
 	}
 
-	&--not-top,
-	&--unpinned {
+	&.headroom--not-top,
+	&.headroom--unpinned {
 		padding-top: $space;
 		padding-bottom: $space;
 		.header__nav-top {
@@ -21,7 +21,7 @@
 		}
 	}
 
-	&--pinned {
+	&.headroom--pinned {
 		padding-top: $space;
 		padding-bottom: $space;
 		@include media-below("lg") {
