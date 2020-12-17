@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Headroom from 'headroom.js';
+import Headroom from './headroom.js';
 
 const GlobalScripts = {
 	init() {
