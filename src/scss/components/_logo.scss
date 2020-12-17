@@ -1,17 +1,24 @@
 .logo{
-  height: 80px;
   max-width: 150px;
   width: 100%;
+  transition: $base-transition;
   @include media-above("xs"){
-    max-width: 200px;
+    width: 200px;
   }
   @include media-above("xxxl"){
-    max-width: 400px;
+    width: 400px;
   }
   img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     background-color: $brand-primary;
+  }
+}
+
+.has-active-nav{
+  .logo{
+    position: absolute;
+    z-index: 2000;
   }
 }

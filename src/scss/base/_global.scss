@@ -1,4 +1,40 @@
 body {
-  padding: 20px;
-  background: #efefef;
+	padding: 20px;
+	background: #efefef;
+	min-height: 200vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $brand-primary;
+	line-height: 1.2;
+	font-weight: 100;
+}
+
+h1 {
+	font-size: $text-base;
+}
+
+h2 {
+	font-size: $text-base;
+}
+
+h3 {
+	font-size: $text-sm2;
+}
+
+h4 {
+	font-size: $text-xs;
+}
+
+h5 {
+	font-size: $text-xs;
+}
+
+h6 {
+	font-size: $text-xs;
 }

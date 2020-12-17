@@ -1,9 +1,11 @@
 import $ from 'jquery';
+import Headroom from 'headroom.js';
 
 const GlobalScripts = {
 	init() {
     this.cache();
     this.events();
+		this.initHeadroom();
 	},
   cache() {
     this.$doc = $(document);
@@ -23,6 +25,35 @@ const GlobalScripts = {
 		// 	this.showSubMenu(event)
 		// );
 	},
+	initHeadroom() {
+		console.log('headroom');
+    let theHeader = document.querySelector('.js-header');
+    let headroom = new Headroom(theHeader, {
+      offset: 0,
+      tolearnce: 0,
+			classes : {
+        // when element is initialised
+        initial : "header",
+        // when scrolling up
+        pinned : "header--pinned",
+        // when scrolling down
+        unpinned : "header--unpinned",
+        // when above offset
+        top : "header--top",
+        // when below offset
+        notTop : "header--not-top",
+        // when at bottom of scroll area
+        bottom : "header--bottom",
+        // when not at bottom of scroll area
+        notBottom : "header--not-bottom",
+        // when frozen method has been called
+        frozen: "header--frozen",
+        // multiple classes are also supported with a space-separated list
+        pinned: "header--pinned foo bar"
+    	},
+    });
+    headroom.init();
+  },
 	showSubMenu(event) {
 		// const el = $(event.currentTarget).parent();
 		// if (el.hasClass('menu-item-has-children')) {

@@ -10,7 +10,7 @@
 
 <body>
 
-	<header class="header header--static">
+	<header class="header header--static js-header u-flex">
 		<div class="wrapper">
 			<div class="header__inner u-flex u-flex-jsb u-flex-ac">
 				<div class="logo">
@@ -18,7 +18,7 @@
 				</div>
 				<div class="header__desktop header__nav u-flex u-flex-jfe u-flex-column u-flex-afe">
 					<div class="header__nav-top u-flex u-flex-jfe">
-						<div class="header__list u-flex u-flex-jfe">
+						<div class="header__list u-flex u-flex-jfe u-flex-ac">
 							<a href="#" class="header__list__item header__list__lang active">EN</a>
 							<a href="#" class="header__list__item header__list__lang">DE</a>
 						</div>
@@ -28,15 +28,56 @@
 							<a href="#" class="header__list__item">Item</a>
 						</div>
 						<div class="header__list u-flex u-flex-jfe">
-							<div class="header__nav-dropdown header__list__item">Dropdown <i class="fas fa-chevron-down"></i></div>
+							<div class="header__nav-dropdown header__list__item">Dropdown <i class="fas fa-chevron-down"></i>
+								<div class="header__dropdown u-flex">
+									<div class="header__dropdown-list">
+										<h2>Please choose your platform:</h2>
+										<ul>
+											<li><a href="#"><img src="../images/content/icon.png" alt="Placeholder" />Lorem Ipsum</a></li>
+											<li><a href="#"><img src="../images/content/icon.png" alt="Placeholder" />Lorem Ipsum</a></li>
+											<li><a href="#"><img src="../images/content/icon.png" alt="Placeholder" />Lorem Ipsum</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="header__nav-bottom">
 						<div class="header__list u-flex u-flex-jfe">
-							<a href="#" class="header__list__item">Menu Item A</a>
-							<a href="#" class="header__list__item">Menu Item B</a>
-							<a href="#" class="header__list__item">Menu Item C</a>
-							<div class="header__nav-dropdown header__list__item">Menu Item D <i class="fas fa-chevron-down"></i></div>
+							<a href="#" class="header__list__item">Menu item A</a>
+							<a href="#" class="header__list__item">Menu item B</a>
+							<a href="#" class="header__list__item">Menu item C</a>
+							<div class="header__nav-dropdown header__list__item">Menu item D <i class="fas fa-chevron-down"></i>
+								<div class="header__dropdown u-flex">
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -49,12 +90,47 @@
 				</nav>
 				<nav class="nav--mobile js-nav-mobile" id="nav-mobile" role="navigation">
 					<div class="wrapper">
-						mobile slider conteeeent
+						<div class="header__list u-flex u-flex-jfe u-flex-afe u-flex-column">
+							<a href="#" class="header__list__item">Menu item A</a>
+							<a href="#" class="header__list__item">Menu item B</a>
+							<a href="#" class="header__list__item">Menu item C</a>
+							<div class="header__nav-dropdown header__list__item"><i class="fas fa-chevron-down"></i>Menu item D
+								<div class="header__dropdown u-flex-column u-flex">
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul class="u-flex">
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul class="u-flex">
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+									<div class="header__dropdown-list">
+										<h2>Heading</h2>
+										<ul class="u-flex">
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+											<li><a href="#">Item</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</nav>
 			</div>
 		</div>
 	</header>
+
+
 
 </body>
 </html>
