@@ -2,7 +2,8 @@
 	background-color: $brand-white;
 	width: 100%;
 	position: fixed;
-	&.headroom--static {
+	z-index: 2000;
+	&--static {
 		padding-top: $space;
 		padding-bottom: $space;
 		min-height: 100px;

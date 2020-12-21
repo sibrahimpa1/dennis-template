@@ -26,7 +26,7 @@ $(document).ready(function(){
 		initHeadroom() {
 	    let theHeader = document.querySelector('.js-header');
 	    let headroom = new Headroom(theHeader, {
-	      offset: 0,
+	      offset: 135,
 	      tolearnce: 0
 	    });
 	    headroom.init();
