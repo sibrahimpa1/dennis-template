@@ -252,8 +252,8 @@
 		&:hover {
 			background: $brand-secondary;
 
-			&:after {
-				opacity: 0;
+			&:before {
+				opacity: 0 !important;
 			}
 
 			& > .chevron {

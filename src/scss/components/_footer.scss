@@ -48,8 +48,24 @@
 			color: $brand-white;
 			font-size: $text-sm2 - 1;
 			display: block;
-			margin: 0 0 $space-xs;
-
+			padding: $space-xs 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			&:after {
+				content: attr(data-text);
+				content: attr(data-text)/"";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				user-select: none;
+				pointer-events: none;
+				font-weight: 500;
+			}
+			&:hover{
+				font-weight: 500;
+			}
 			&.active {
 				font-weight: 500;
 			}
