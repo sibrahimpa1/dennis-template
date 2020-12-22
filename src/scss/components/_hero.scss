@@ -29,7 +29,6 @@
   margin: -110px auto 0;
   width: 100%;
   @include media-above("lg"){
-    right: 0;
     bottom: -70px;
     width: 400px;
     position: absolute;
@@ -37,7 +36,11 @@
     min-height: 300px;
     padding: $space-bump;
     left: auto;
+    right: 5%;
     margin: 0;
+  }
+  @include media-above("xxxl"){
+    right: 2%;
   }
   span{
     color: $brand-white;

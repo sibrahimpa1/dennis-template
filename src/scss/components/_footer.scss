@@ -35,13 +35,7 @@
 				padding: 0 0 0 $space-lg;
 			}
 		}
-		@include media-above("xxxl") {
-			padding: 0 $space-xl;
 
-			&:last-child {
-				padding: 0 0 0 $space-xl;
-			}
-		}
 
 		h2 {
 			font-size: $text-xs;
@@ -52,7 +46,7 @@
 
 		a {
 			color: $brand-white;
-			font-size: $text-sm2;
+			font-size: $text-sm2 - 1;
 			display: block;
 			margin: 0 0 $space-xs;
 
@@ -76,8 +70,8 @@
 
 	&__info-text {
 		margin: 0 0 $space;
-		font-size: $text-sm2;
-
+		font-size: $text-sm2 - 1;
+		line-height: 1.2;
 		span {
 			display: block;
 			margin: 0 0 $space-xs;

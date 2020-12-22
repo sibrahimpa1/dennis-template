@@ -3,6 +3,9 @@
 	width: 100%;
 	position: fixed;
 	z-index: 2000;
+	transition: $base-transition;
+	height: 190px;
+
 	&--static {
 		padding-top: $space;
 		padding-bottom: $space;
@@ -17,14 +20,19 @@
 	&.headroom--unpinned {
 		padding-top: $space;
 		padding-bottom: $space;
+		height: 100px;
+
 		.header__nav-top {
-			display: none;
+			margin: -50px 0 0;
+			z-index: -1;
+			opacity: 0;
 		}
 	}
 
 	&.headroom--pinned {
 		padding-top: $space;
 		padding-bottom: $space;
+		height: 190px;
 		@include media-below("lg") {
 			padding-top: $space;
 			padding-bottom: $space;
@@ -35,7 +43,29 @@
 		}
 
 		.header__nav-top {
-			display: flex;
+			opacity: 1;
+			z-index: 100;
+			margin: 0 0 $space-md;
+		}
+	}
+
+	&.headroom--bottom {
+		padding-top: $space;
+		padding-bottom: $space;
+		height: 190px;
+		@include media-below("lg") {
+			padding-top: $space;
+			padding-bottom: $space;
+		}
+
+		.header__inner {
+			align-items: center;
+		}
+
+		.header__nav-top {
+			opacity: 1;
+			z-index: 100;
+			margin: 0 0 $space-md;
 		}
 	}
 
@@ -82,14 +112,23 @@
 	ul li {
 		a {
 			padding: $space-sm 0;
-			display: flex;
-			align-items: center;
 			position: relative;
 			font-weight: 400;
-
+			display: flex;
+			align-items: center;
+			&:after {
+				content: attr(data-text);
+				content: attr(data-text)/"";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				user-select: none;
+				pointer-events: none;
+				font-weight: bold;
+			}
 			&:hover {
 				color: $brand-primary;
-				font-weight: 400;
+				font-weight: bold;
 			}
 		}
 
@@ -103,21 +142,26 @@
 
 .header__nav-top {
 	width: 100%;
-	margin: 0 0 $space-md*2;
+	margin: 0 0 $space-md;
+	transition: $base-transition;
 
 	.header__nav-dropdown {
 		position: relative;
+		flex-direction: column;
+		padding: $space $space-bump $space $space !important;
 
-		svg {
-			margin: 0 0 0 3px;
+		.chevron {
 			width: 10px;
+			display: inline-block;
 			transition: $base-transition;
+			position: absolute;
+			right: 15px;
 		}
 
 		&:hover {
 			background: $brand-secondary;
 
-			& > svg {
+			& > .chevron {
 				transform: rotate(180deg);
 			}
 
@@ -134,7 +178,7 @@
 	}
 
 	.header__list {
-		margin: 0 0 0 $space-lg;
+		margin: 0 0 0 $space-md;
 
 		&__item {
 			font-size: $text-xs;
@@ -143,10 +187,22 @@
 			cursor: pointer;
 			padding: $space $space-sm;
 			@include media-above("xl") {
-				font-size: $text-sm;
+				font-size: $text-sm - 3;
+			}
+
+			&:after {
+				content: attr(data-text);
+				content: attr(data-text)/"";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				user-select: none;
+				pointer-events: none;
+				font-weight: bold;
 			}
 
 			&:hover {
+				font-weight: bold;
 				color: $brand-primary;
 			}
 
@@ -160,10 +216,14 @@
 			padding: 0 $space-sm 0 0;
 			margin: 0 $space-sm 0 0;
 			text-transform: uppercase;
-			line-height: 1;
 
+			&:hover{
+				font-weight: bold;
+		    font-size: 15px;
+			}
 			&.active {
 				font-weight: bold;
+		    font-size: 15px;
 			}
 
 			&:last-child {
@@ -178,20 +238,25 @@
 	width: 100%;
 
 	.header__nav-dropdown {
-		svg {
+		flex-direction: column;
+		padding: $space $space-md $space $space !important;
+
+		.chevron {
 			width: 15px;
-			margin: 0 0 0 $space-xs;
 			transition: $base-transition;
+			display: inline-block;
+			position: absolute;
+			right: 15px;
 		}
 
 		&:hover {
 			background: $brand-secondary;
 
 			&:after {
-				display: none;
+				opacity: 0;
 			}
 
-			& > svg {
+			& > .chevron {
 				transform: rotate(180deg);
 			}
 
@@ -210,21 +275,38 @@
 			cursor: pointer;
 			padding: $space;
 			@include media-above("xxl") {
-				font-size: $text-sm2;
-				margin: 0 0 0 $space-md;
+				font-size: $text-sm2 - 1;
+				margin: 0 0 0 $space;
+			}
+
+			&:after {
+				content: attr(data-text);
+				content: attr(data-text)/"";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				user-select: none;
+				pointer-events: none;
+				font-weight: bold;
+			}
+
+			&:before {
+				content: "";
+				width: 35px;
+				height: 3px;
+				background-color: $brand-primary;
+				position: absolute;
+				bottom: 10px;
+				left: 20px;
+				opacity: 0;
 			}
 
 			&:hover {
 				color: $brand-primary;
+				font-weight: 400;
 
-				&:after {
-					content: "";
-					width: 40px;
-					height: 3px;
-					background-color: $brand-primary;
-					position: absolute;
-					bottom: 10px;
-					left: 20px;
+				&:before {
+					opacity: 1;
 				}
 			}
 
@@ -240,6 +322,9 @@
 		color: $brand-primary;
 		line-height: 1;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 }
 

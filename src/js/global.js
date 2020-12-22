@@ -24,11 +24,17 @@ $(document).ready(function(){
 			this.$doc.on('click', '.js-share', event => this.openShareWindow(event));
 		},
 		initHeadroom() {
+			$(".js-header").on('mouseover', function(){
+				$(this).addClass('headroom--pinned').removeClass('headroom--unpinned headroom--not-top');
+			});
 	    let theHeader = document.querySelector('.js-header');
 	    let headroom = new Headroom(theHeader, {
-	      offset: 135,
-	      tolearnce: 0
-	    });
+			  "offset": 90,
+				"tolerance" : {
+	        down : 0,
+	        up : 10
+		    },
+			});
 	    headroom.init();
 	  },
 		showMobileNav(event) {

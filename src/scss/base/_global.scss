@@ -2,10 +2,10 @@ body {
 	padding: 20px;
 	background: #efefef;
 	.content{
-		min-height: 100vh;
+		min-height: 300vh;
 		padding: 100px 0 0;
 		@include media-above("lg"){
-			padding: 235px 0 0;
+			padding: 195px 0 0;
 		}
 	}
 }
