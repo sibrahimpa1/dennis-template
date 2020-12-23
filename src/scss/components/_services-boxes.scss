@@ -1,5 +1,6 @@
 .services {
 	padding: $space-lg 0;
+
 	&__boxes {
 		.slick-track {
 			display: flex;
@@ -11,8 +12,15 @@
 			padding: 0 !important;
 		}
 
+		.slick-track {
+			display: flex;
+		}
+
 		.slick-slide {
 			margin: 0 $space 0 0;
+			display: flex;
+			height: auto;
+			outline: none !important;
 
 			&:last-child {
 				margin: 0;

@@ -28,9 +28,9 @@ $(document).ready(function(){
 			this.$doc.on('click', '.js-share', event => this.openShareWindow(event));
 		},
 		mobileSliders(){
-			// slider
-			var slickSlider = $('.js-services');
-			var settings_slider = {
+			// services slider
+			var servicesSlider = $('.js-services');
+			var servicesSettings = {
 				dots: false,
 				arrows: false,
 				slidesToShow: 1,
@@ -38,7 +38,20 @@ $(document).ready(function(){
 				autoplay: false,
 				centerMode: true
 			}
-			slick_on_mobile( slickSlider, settings_slider);
+			slick_on_mobile( servicesSlider, servicesSettings);
+
+			// news slider
+			var newsSlider = $('.js-news');
+			var newsSettings = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true
+			}
+			slick_on_mobile( newsSlider, newsSettings);
 
 	  	// slick on mobile
 			function slick_on_mobile(slider, settings){
@@ -54,6 +67,7 @@ $(document).ready(function(){
 					}
 				});
 			};
+
 		},
 		hoverStates(){
 			// services boxes
