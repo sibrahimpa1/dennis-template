@@ -56,8 +56,11 @@
 
 	.header__nav-dropdown {
 		text-align: right;
-
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 		.header__dropdown {
+			width: 100%;
 			opacity: 1;
 			position: relative;
 			z-index: 2000;

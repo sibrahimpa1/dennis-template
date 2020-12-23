@@ -72,6 +72,10 @@
 	&__inner {
 		position: relative;
 	}
+
+	@include media-below("lg"){
+		height: 100px !important;
+	}
 }
 
 .header__nav {

@@ -1,0 +1,158 @@
+.services {
+	padding: $space-lg 0;
+	&__boxes {
+		.slick-track {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.slick-list {
+			padding: 0 !important;
+		}
+
+		.slick-slide {
+			margin: 0 $space 0 0;
+
+			&:last-child {
+				margin: 0;
+			}
+			@include media-below("lg") {
+				img {
+					opacity: 0.35 !important;
+				}
+
+				.services__box-bottom {
+					opacity: 0.6 !important;
+				}
+			}
+			@include media-above("lg") {
+				width: 32.33%;
+			}
+		}
+
+		.slick-slide.slick-current.slick-center {
+			@include media-below("lg") {
+				img {
+					opacity: 1 !important;
+				}
+
+				.services__box-bottom {
+					opacity: 1 !important;
+				}
+			}
+			@include media-above("lg") {
+				width: 32.33%;
+			}
+		}
+	}
+
+	&__box {
+		display: flex !important;
+		flex-direction: column !important;
+		@include media-above("lg") {
+			margin: 0 $space 0 0;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		img {
+			transition: $base-transition;
+			object-fit: cover;
+			height: 300px;
+			@include media-above("lg") {
+				min-height: 250px;
+			}
+			@include media-above("xxxl") {
+				min-height: 350px;
+			}
+		}
+
+		&--focus {
+			& > * {
+				opacity: 1 !important;
+			}
+
+			p {
+				&:after {
+					opacity: 1 !important;
+				}
+			}
+		}
+	}
+
+	&__box-bottom {
+		padding: $space-bump;
+		transition: $base-transition;
+
+		& > * {
+			color: $brand-white;
+		}
+
+		&--green {
+			background-color: $brand-green-shade;
+		}
+
+		&--beige {
+			background-color: $brand-beige-shade;
+		}
+
+		&--navy {
+			background-color: $brand-navy-shade;
+		}
+
+		h2 {
+			font-size: $text-lg;
+			margin: 0 0 $space-sm;
+		}
+
+		p {
+			font-size: $text-sm;
+			font-weight: 200;
+			margin: 0 0 $space;
+			padding: 0 0 $space-bump;
+			position: relative;
+			line-height: 1.4;
+
+			&:after {
+				content: "";
+				width: 35px;
+				height: 3px;
+				background-color: $brand-white;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				opacity: 0;
+				transition: $base-transition;
+			}
+		}
+
+		a {
+			font-size: $text-sm;
+			font-weight: 200;
+			text-transform: uppercase;
+			text-align: right;
+			display: block;
+			position: relative;
+			margin: -1*$space 0 0 auto;
+
+			svg {
+				width: 14px !important;
+				height: 14px;
+				display: inline-block;
+				transition: $base-transition;
+				margin: 0 0 1px 7px;
+			}
+
+			&:hover {
+				color: $brand-white;
+
+				svg {
+					margin: 0 -10px 1px 7px;
+				}
+			}
+		}
+	}
+}

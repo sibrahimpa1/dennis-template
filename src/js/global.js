@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import Headroom from './headroom/headroom.js';
+// import 'slick-carousel' from './slick/slick.js';
+import './slick/slick.js';
 
 $(document).ready(function(){
 	const GlobalScripts = {
@@ -7,6 +9,8 @@ $(document).ready(function(){
 	    this.cache();
 	    this.events();
 			this.initHeadroom();
+			this.hoverStates();
+			this.mobileSliders();
 		},
 	  cache() {
 	    this.$doc = $(document);
@@ -22,6 +26,49 @@ $(document).ready(function(){
 		events() {
 			this.$doc.on('click', '.js-nav-hamburger', event => this.showMobileNav(event));
 			this.$doc.on('click', '.js-share', event => this.openShareWindow(event));
+		},
+		mobileSliders(){
+			// slider
+			var slickSlider = $('.js-services');
+			var settings_slider = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true
+			}
+			slick_on_mobile( slickSlider, settings_slider);
+
+	  	// slick on mobile
+			function slick_on_mobile(slider, settings){
+				$(window).on('load resize', function() {
+					if ($(window).width() > 960) {
+						if (slider.hasClass('slick-initialized')) {
+							slider.slick('unslick');
+						}
+						return
+					}
+					if (!slider.hasClass('slick-initialized')) {
+						return slider.slick(settings);
+					}
+				});
+			};
+		},
+		hoverStates(){
+			// services boxes
+			$(document).on({
+		    mouseenter: function () {
+					$(".services__box .services__box-bottom").css('opacity', 0.6);
+					$(".services__box img").css('opacity', 0.35);
+					$(this).addClass('services__box--focus');
+		    },
+		    mouseleave: function () {
+					$(".services__box").removeClass('services__box--focus');
+					$(".services__box .services__box-bottom").css('opacity', 1);
+					$(".services__box img").css('opacity', 1);
+		    }
+			}, '.services__box');
 		},
 		initHeadroom() {
 			$(".js-header").on('mouseover', function(){

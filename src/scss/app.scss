@@ -10,6 +10,7 @@
 /* Vendors*/
 @import 'vendor/hamburgers/hamburgers';
 @import "vendor/fontawesome-free/css/all.css";
+@import "vendor/slick";
 
 /* Components */
 @import 'components/header';
@@ -18,6 +19,8 @@
 @import 'components/footer';
 @import 'components/hero';
 @import 'components/basic-text';
+@import 'components/services-boxes';
+@import 'components/news-boxes';
 
 /* Browser specific styles */
 @import 'dirty/hacks';

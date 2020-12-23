@@ -1,8 +1,9 @@
 body {
 	padding: 20px;
 	background: #efefef;
+  overflow-x: hidden;
 	.content{
-		min-height: 300vh;
+		min-height: 200vh;
 		padding: 100px 0 0;
 		@include media-above("lg"){
 			padding: 195px 0 0;
@@ -44,4 +45,14 @@ h5 {
 
 h6 {
 	font-size: $text-xs;
+}
+
+.block-title{
+	font-size: $text-lg;
+	font-weight: 500;
+	margin: 0 0 $space-md;
+	@include media-above("md"){
+		margin: 0 0 $space-bump;
+		font-size: $text-xl;
+	}
 }
