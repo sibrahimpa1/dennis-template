@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Headroom from './headroom/headroom.js';
-// import 'slick-carousel' from './slick/slick.js';
 import './slick/slick.js';
 
 $(document).ready(function(){

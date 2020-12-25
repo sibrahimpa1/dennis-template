@@ -50,6 +50,7 @@ h6 {
 	font-size: $text-lg;
 	font-weight: 500;
 	margin: 0 0 $space-md;
+	width: 100%;
 	@include media-above("md"){
 		margin: 0 0 $space-bump;
 		font-size: $text-xl;

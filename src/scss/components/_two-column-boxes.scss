@@ -1,0 +1,39 @@
+.two-col-boxes{
+  padding: $space-lg 0;
+  &__item{
+    flex-basis: 100%;
+    margin: 0 0 $space-bump;
+    @include media-above("md"){
+      margin: $space-bump 0;
+      flex-basis: 50%;
+    }
+    h2{
+      letter-spacing: 1.36px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: $text-sm2;
+      margin: 0 0 $space-sm;
+      @include media-above("md"){
+        font-size: $text-md;
+        margin: 0 0 $space;
+      }
+    }
+    p{
+      font-weight: 200;
+      line-height: 1.4;
+      color: $brand-primary;
+      @include media-above("sm"){
+        max-width: 80%;
+      }
+      @include media-above("md"){
+        padding: 0 $space-bump 0 0;
+        max-width: 100%;
+      }
+      @include media-above("lg"){
+        font-size: $text-base + 2;
+        max-width: 80%;
+        padding: 0;
+      }
+    }
+  }
+}

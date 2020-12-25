@@ -6,6 +6,7 @@
 @import 'base/fonts';
 @import 'base/wrapper';
 @import 'base/flex';
+@import 'base/colors';
 
 /* Vendors*/
 @import 'vendor/hamburgers/hamburgers';
@@ -21,6 +22,8 @@
 @import 'components/basic-text';
 @import 'components/services-boxes';
 @import 'components/news-boxes';
+@import 'components/two-column-boxes';
+@import 'components/team';
 
 /* Browser specific styles */
 @import 'dirty/hacks';

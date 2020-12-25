@@ -23,11 +23,16 @@
 }
 
 .hero__box{
-  background: rgb(0 40 74 / 0.8);
   backdrop-filter: blur(15px);
   padding: $space-md2 $space-bump $space-bump;
   margin: -110px auto 0;
   width: 100%;
+  &--blue{
+    background: rgb(0 40 74 / 0.8);
+  }
+  &--green{
+    background: $brand-green-shade;
+  }
   @include media-above("lg"){
     bottom: -70px;
     width: 400px;

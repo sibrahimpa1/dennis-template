@@ -2,7 +2,7 @@
 	max-width: 1440px;
 	margin: auto;
 	width: 100%;
-	padding: 0 $space-md;
+	padding: 0 $space;
 	position: relative;
 	@include media-above('xs') {
 		max-width: 100%;
