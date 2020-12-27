@@ -277,7 +277,6 @@
 			font-size: $text-sm2;
 			font-weight: 300;
 			cursor: pointer;
-			padding: $space;
 			@include media-above("lg") {
 				font-size: $text-sm;
 		    padding: $space $space-sm;
@@ -285,6 +284,7 @@
 			@include media-above("xxl") {
 				font-size: $text-sm2 - 1;
 				margin: 0 0 0 $space;
+				padding: $space;
 			}
 
 			&:after {

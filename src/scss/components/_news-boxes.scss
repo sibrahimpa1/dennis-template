@@ -130,7 +130,13 @@
 				-webkit-line-clamp: 20;
 				-webkit-box-orient: vertical;
 				@include media-above("lg") {
+					-webkit-line-clamp: 7;
+				}
+				@include media-above("xxl") {
 					-webkit-line-clamp: 8;
+				}
+				@include media-above("xxxl") {
+					-webkit-line-clamp: 7;
 				}
 			}
 		}

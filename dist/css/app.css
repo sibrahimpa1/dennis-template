@@ -5758,7 +5758,6 @@ hr {
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
-  padding: 20px;
 }
 @media screen and (min-width: 960px) {
   .header__nav-bottom .header__list__item {
@@ -5770,6 +5769,7 @@ hr {
   .header__nav-bottom .header__list__item {
     font-size: 17px;
     margin: 0 0 0 20px;
+    padding: 20px;
   }
 }
 .header__nav-bottom .header__list__item:after {
@@ -6586,7 +6586,17 @@ hr {
 }
 @media screen and (min-width: 960px) {
   .grid__box-content--no-img p {
+    -webkit-line-clamp: 7;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .grid__box-content--no-img p {
     -webkit-line-clamp: 8;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .grid__box-content--no-img p {
+    -webkit-line-clamp: 7;
   }
 }
 .grid .slick-list {
