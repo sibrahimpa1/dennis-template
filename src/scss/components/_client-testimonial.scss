@@ -1,0 +1,48 @@
+.client-testimonial{
+  position: relative;
+  img{
+    max-height: 700px;
+    object-fit: cover;
+    width: 100%;
+    @include media-below("md"){
+      height: 500px;
+    }
+  }
+  &__box{
+    backdrop-filter: blur(15px);
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    bottom: $space-xl;
+    max-width: 360px;
+    padding: $space-xl $space-md $space-md;
+    color: $brand-white;
+    text-align: right;
+    @include media-below("lg"){
+      bottom: auto;
+      top: $space-md;
+    }
+    @include media-below("md"){
+      top: $space-lg;
+      padding: $space-lg $space-md $space-md;
+    }
+    @include media-below("sm"){
+      max-width: 90%;
+    }
+    &--beige{
+      background: rgb(165 158 135 / 0.65);
+    }
+    p{
+      margin: 0 0 $space-bump;
+      font-size: $text-base + 2;
+      font-weight: 200;
+      @include media-below("md"){
+        font-size: $text-base;
+      }
+    }
+    div{
+      font-size: $text-sm2;
+      font-weight: 200;
+    }
+  }
+}

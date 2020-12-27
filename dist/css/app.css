@@ -4966,7 +4966,7 @@ hr {
 @media screen and (min-width: 700px) {
   .wrapper {
     max-width: 700px;
-    padding: 0 20px;
+    padding: 0 40px;
   }
 }
 @media screen and (min-width: 960px) {
@@ -5760,6 +5760,12 @@ hr {
   cursor: pointer;
   padding: 20px;
 }
+@media screen and (min-width: 960px) {
+  .header__nav-bottom .header__list__item {
+    font-size: 16px;
+    padding: 20px 10px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .header__nav-bottom .header__list__item {
     font-size: 17px;
@@ -6174,6 +6180,9 @@ hr {
 }
 .hero__box--green {
   background: #92A395;
+}
+.hero__box--beige {
+  background: #A59E87;
 }
 @media screen and (min-width: 960px) {
   .hero__box {
@@ -6733,6 +6742,183 @@ hr {
   top: 0;
   right: 0;
   bottom: 0;
+}
+
+.employee-testimonial {
+  background-color: #F6F5F2;
+  position: relative;
+  margin: 100px 0;
+}
+@media screen and (min-width: 960px) {
+  .employee-testimonial {
+    padding: 100px 0;
+    margin: 120px 0 60px;
+  }
+}
+.employee-testimonial__content {
+  padding: 100px 0 40px;
+  max-width: 80%;
+}
+@media screen and (min-width: 960px) {
+  .employee-testimonial__content {
+    padding: 40px 100px 40px 0;
+  }
+}
+.employee-testimonial__content h2 {
+  font-size: 28px;
+  margin: 0 0 30px;
+}
+.employee-testimonial__content p {
+  color: #00284A;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+@media screen and (min-width: 700px) {
+  .employee-testimonial__content p {
+    font-size: 22px;
+  }
+}
+.employee-testimonial__author {
+  position: absolute;
+  top: -75px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+}
+@media screen and (min-width: 960px) {
+  .employee-testimonial__author {
+    min-width: 200px;
+    width: auto;
+    height: auto;
+    margin: -100px 0 0;
+    position: relative;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .employee-testimonial__author {
+    margin: -150px 0 0;
+    min-width: 280px;
+  }
+}
+.employee-testimonial__author .image {
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  margin: 0 0 20px;
+}
+.employee-testimonial__author img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.employee-testimonial__author h4 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 5px;
+}
+@media screen and (max-width: 959px) {
+  .employee-testimonial__author h4 {
+    display: none;
+  }
+}
+.employee-testimonial__author p {
+  font-size: 16px;
+  font-weight: 200;
+  color: #00284A;
+  line-height: 1.1;
+}
+@media screen and (max-width: 959px) {
+  .employee-testimonial__author p {
+    display: none;
+  }
+}
+.employee-testimonial__author-mobile {
+  margin: 40px 0 0;
+}
+@media screen and (min-width: 960px) {
+  .employee-testimonial__author-mobile {
+    display: none;
+  }
+}
+.employee-testimonial__author-mobile h4 {
+  font-size: 20px;
+  margin: 0 0 5px;
+  font-weight: 300;
+}
+.employee-testimonial__author-mobile p {
+  font-size: 16px;
+  font-weight: 200;
+  color: #00284A;
+  line-height: 1.1;
+}
+
+.client-testimonial {
+  position: relative;
+}
+.client-testimonial img {
+  max-height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+@media screen and (max-width: 699px) {
+  .client-testimonial img {
+    height: 500px;
+  }
+}
+.client-testimonial__box {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  bottom: 100px;
+  max-width: 360px;
+  padding: 100px 40px 40px;
+  color: #fff;
+  text-align: right;
+}
+@media screen and (max-width: 959px) {
+  .client-testimonial__box {
+    bottom: auto;
+    top: 40px;
+  }
+}
+@media screen and (max-width: 699px) {
+  .client-testimonial__box {
+    top: 60px;
+    padding: 60px 40px 40px;
+  }
+}
+@media screen and (max-width: 499px) {
+  .client-testimonial__box {
+    max-width: 90%;
+  }
+}
+.client-testimonial__box--beige {
+  background: rgba(165, 158, 135, 0.65);
+}
+.client-testimonial__box p {
+  margin: 0 0 30px;
+  font-size: 22px;
+  font-weight: 200;
+}
+@media screen and (max-width: 699px) {
+  .client-testimonial__box p {
+    font-size: 20px;
+  }
+}
+.client-testimonial__box div {
+  font-size: 18px;
+  font-weight: 200;
 }
 
 /* Browser specific styles */

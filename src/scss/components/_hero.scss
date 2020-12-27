@@ -33,6 +33,9 @@
   &--green{
     background: $brand-green-shade;
   }
+  &--beige{
+    background: $brand-beige-shade;
+  }
   @include media-above("lg"){
     bottom: -70px;
     width: 400px;
