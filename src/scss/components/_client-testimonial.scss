@@ -1,5 +1,6 @@
 .client-testimonial{
   position: relative;
+  margin: $space-xl 0;
   img{
     max-height: 700px;
     object-fit: cover;
@@ -31,6 +32,9 @@
     }
     &--beige{
       background: rgb(165 158 135 / 0.65);
+    }
+    &--gray{
+      background: rgb(116 132 145 / 0.75);
     }
     p{
       margin: 0 0 $space-bump;

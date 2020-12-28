@@ -8,8 +8,10 @@ $(document).ready(function(){
 	    this.cache();
 	    this.events();
 			this.initHeadroom();
+			this.navigationActiveLinks();
 			this.hoverStates();
 			this.mobileSliders();
+			this.expandStaticBox();
 		},
 	  cache() {
 	    this.$doc = $(document);
@@ -25,6 +27,28 @@ $(document).ready(function(){
 		events() {
 			this.$doc.on('click', '.js-nav-hamburger', event => this.showMobileNav(event));
 			this.$doc.on('click', '.js-share', event => this.openShareWindow(event));
+		},
+		navigationActiveLinks(){
+			// this is only temporary link active state for now - should be reviewed once backend is done
+			var pathname = window.location.pathname;
+			$(".header__desktop a").each(function(){
+			  if(~pathname.indexOf($(this).attr('href'))){
+					$(this).addClass("active");
+					return;
+				}
+			});
+		},
+		expandStaticBox(){
+			$(document).on({
+				mouseenter: function () {
+					$(this).addClass("active");
+					$(this).find("span").text("WENIGER")
+				},
+				mouseleave: function () {
+					$(this).find("span").text("Mehr")
+					$(this).removeClass("active");
+				}
+			}, '.expand-boxes__item');
 		},
 		mobileSliders(){
 			// services slider
@@ -51,6 +75,19 @@ $(document).ready(function(){
 				centerMode: true
 			}
 			slick_on_mobile( newsSlider, newsSettings);
+
+			// family expand boxes slider
+			var expandBoxesSlider = $('.js-expand-boxes');
+			var expandBoxesSettings = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true
+			}
+			slick_on_mobile( expandBoxesSlider, expandBoxesSettings);
 
 	  	// slick on mobile
 			function slick_on_mobile(slider, settings){

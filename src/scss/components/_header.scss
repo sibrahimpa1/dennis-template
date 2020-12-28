@@ -348,3 +348,11 @@
 		display: block;
 	}
 }
+
+.header a.active{
+	color: $brand-primary;
+	font-weight: 400;
+	&:before {
+		opacity: 1;
+	}
+}

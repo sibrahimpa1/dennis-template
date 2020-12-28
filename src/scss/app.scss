@@ -23,9 +23,11 @@
 @import 'components/services-boxes';
 @import 'components/news-boxes';
 @import 'components/two-column-boxes';
-@import 'components/team';
+@import 'components/team-block';
 @import 'components/employee-testimonial';
 @import 'components/client-testimonial';
+@import 'components/team';
+@import 'components/expand-boxes';
 
 /* Browser specific styles */
 @import 'dirty/hacks';

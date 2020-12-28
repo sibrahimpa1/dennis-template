@@ -1,0 +1,42 @@
+.team{
+  padding: $space-lg 0;
+  &__member{
+    color: $brand-primary;
+    margin: 0 0 $space-md;
+    flex-basis: 24%;
+    position: relative;
+    flex-basis: 100%;
+    @include media-above("sm"){
+      margin: 0 1% $space-md 0;
+      flex-basis: 49%;
+    }
+    @include media-above("lg"){
+      flex-basis: 24%;
+    }
+    h2{
+      font-size: $text-md;
+      margin: 0 0 $space-xs;
+    }
+    p{
+      font-size: $text-sm;
+      font-weight: 200;
+    }
+  }
+  &__image{
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    margin: 0 0 $space-sm;
+    img{
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

@@ -1,10 +1,16 @@
 .employee-testimonial{
   background-color: $brand-beige;
   position: relative;
-  margin: $space-xl 0;
+  margin: $space-xl*2 0 $space-md;
+  &--gray{
+    background-color: #F4F5F6;
+  }
+  &--beige{
+    background-color: $brand-beige;
+  }
   @include media-above("lg"){
     padding: $space-xl 0;
-    margin: $space-xxl 0 $space-lg;
+    margin: $space-xxl*2 0 $space-lg;
   }
   &__content{
     padding: $space-xl 0 $space-md;

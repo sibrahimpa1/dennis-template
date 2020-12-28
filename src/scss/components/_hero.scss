@@ -36,6 +36,9 @@
   &--beige{
     background: $brand-beige-shade;
   }
+  &--gray{
+    background: rgb(116 132 145 / 0.9);
+  }
   @include media-above("lg"){
     bottom: -70px;
     width: 400px;
