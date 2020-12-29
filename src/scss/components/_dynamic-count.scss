@@ -1,0 +1,61 @@
+.dynamic-count{
+  margin: $space-lg 0;
+  position: relative;
+  height: 560px;
+  @include media-above("md"){
+    height: 700px;
+  }
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.dynamic-count__box{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: $space-lg auto;
+  background-color: $brand-green-shade;
+  color: $brand-white;
+  padding: $space-lg $space-bump;
+  @include media-below("md"){
+    max-width: 250px;
+    margin: $space-bump auto;
+    height: 500px;
+  }
+}
+
+.dynamic-count__item{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  p{
+    font-size: $text-sm;
+    font-weight: 200;
+    position: relative;
+    padding: 0 0 $space;
+    &:after{
+      content: "";
+      height: 2px;
+      background-color: white;
+      width: 30px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.dynamic-count__counter{
+  font-weight: 400;
+  font-size: $text-base;
+  margin: 0 0 $space-xs;
+  span{
+    transition: $base-transition;
+  }
+}

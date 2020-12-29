@@ -1,6 +1,8 @@
 body {
 	padding: 20px;
   overflow-x: hidden;
+	max-width: 2000px;
+	margin: 0 auto !important;
 	.content{
 		min-height: 200vh;
 		padding: 100px 0 0;

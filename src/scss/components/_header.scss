@@ -305,8 +305,11 @@
 				background-color: $brand-primary;
 				position: absolute;
 				bottom: 10px;
-				left: 20px;
+				left: $space-sm;
 				opacity: 0;
+				@include media-above("xl") {
+					left: $space;
+				}
 			}
 
 			&:hover {
