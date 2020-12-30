@@ -19,5 +19,6 @@
 	}
 	@include media-above('xxxl') {
 		max-width: 1440px;
+		width: 100%;
 	}
 }

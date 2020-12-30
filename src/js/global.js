@@ -13,7 +13,7 @@ $(document).ready(function(){
 			this.mobileSliders();
 			this.expandStaticBox();
 			this.dynamicCount();
-			this.portfolioSliderNav();
+			this.customSliderNav();
 		},
 	  cache() {
 	    this.$doc = $(document);
@@ -40,14 +40,14 @@ $(document).ready(function(){
 				}
 			});
 		},
-		portfolioSliderNav(){
-			$(".portfolio-slider__desktop-content").eq(0).show();
-			$(".portfolio-slider__desktop-nav a").on('click', function(){
+		customSliderNav(){
+			$(".custom-slider__desktop-content").eq(0).show();
+			$(".custom-slider__desktop-nav a").on('click', function(){
 				var clickedItem = $(this).index();
-				$(".portfolio-slider__desktop-nav a").removeClass("active");
+				$(".custom-slider__desktop-nav a").removeClass("active");
 				$(this).addClass('active');
-				$(".portfolio-slider__desktop-content").hide();
-				$(".portfolio-slider__desktop-content").eq(clickedItem).fadeIn();
+				$(".custom-slider__desktop-content").hide();
+				$(".custom-slider__desktop-content").eq(clickedItem).fadeIn();
 			});
 		},
 		dynamicCount(){
@@ -142,8 +142,8 @@ $(document).ready(function(){
 			slick_on_mobile( expandBoxesSlider, expandBoxesSettings);
 
 			// direct investments - portfolio slider
-			var portfolioSlider = $('.js-portfolio');
-			var portfolioSettings = {
+			var customSlider = $('.js-custom-slider');
+			var customSliderSettings = {
 				dots: false,
 				arrows: false,
 				slidesToShow: 1.2,
@@ -159,7 +159,27 @@ $(document).ready(function(){
 					}
 				}]
 			}
-			slick_on_mobile( portfolioSlider, portfolioSettings);
+			slick_on_mobile( customSlider, customSliderSettings);
+
+			// direct investments - portfolio slider
+			var portfolioSlider = $('.js-portfolio-items');
+			var portfolioSliderSettings = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1.2,
+				slidesToScroll: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true,
+				responsive: [{
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}]
+			}
+			slick_on_mobile( portfolioSlider, portfolioSliderSettings);
 
 	  	// slick on mobile
 			function slick_on_mobile(slider, settings){
@@ -174,7 +194,31 @@ $(document).ready(function(){
 						return slider.slick(settings);
 					}
 				});
+
 			};
+
+			$(window).on('load resize', function() {
+				if ($(window).width() > 960) {
+					$(".portfolio__box--dynamic").removeClass("clicked");
+					$(".portfolio__box--dynamic").unbind(addDoubleTap());
+				}
+				else{
+					$(".portfolio__box--dynamic").bind(addDoubleTap());
+				}
+			});
+
+			var addDoubleTap = () => {
+				$(".portfolio__box--dynamic").on('click', function(e){
+					if(!$(this).hasClass("clicked")){
+						e.preventDefault();
+						$(".portfolio__box--dynamic").removeClass("clicked");
+						$(this).addClass("clicked");
+					}
+					else if($(this).hasClass("clicked")){
+						console.log('go for it');
+					}
+				});
+			}
 
 		},
 		hoverStates(){
