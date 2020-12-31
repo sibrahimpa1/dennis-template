@@ -1,0 +1,241 @@
+.explore-boxes{
+  padding: $space-lg 0;
+}
+
+.explore-boxes__inner{
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-boxes__bg{
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: calc(100% - 1px);
+  object-fit: cover;
+  @include media-below("lg"){
+    display: none;
+  }
+}
+
+.explore-boxes__wrap{
+  flex-wrap: wrap;
+  .slick-list {
+		padding: 0 !important;
+	}
+	.slick-slide {
+		outline: none !important;
+	}
+}
+
+.explore-boxes__item{
+  background: rgb(246 245 242 / 0.80);
+  min-height: 300px;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  transition: $base-transition;
+  margin: 0 $space 0 0;
+  &:last-child{
+    margin: 0;
+  }
+  @include media-above("lg"){
+    margin: 0;
+    border-right: $space-sm solid $brand-white;
+    border-bottom: $space-sm solid $brand-white;
+    flex: 1;
+    flex-basis: 33.333333%;
+    &:nth-child(3),
+    &:nth-child(6){
+      border-right: 0 solid $brand-white;
+    }
+  }
+}
+
+.explore-boxes__item-content{
+  backdrop-filter: blur(2px);
+  position: absolute;
+  padding: $space;
+  color: $brand-primary;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  right: 0;
+  h2{
+    font-weight: 400;
+    transition: $base-transition;
+    font-size: $text-base;
+    margin: 0 0 $space-sm;
+    @include media-above("lg"){
+      max-width: 90%;
+    }
+  }
+  p{
+    font-weight: 200;
+    transition: $base-transition;
+    height: 0;
+    overflow: scroll;
+  }
+  div{
+    font-size: $text-xs;
+    text-transform: uppercase;
+    transition: $base-transition;
+    font-weight: 300;
+    margin: 0 0 $space;
+    svg{
+      margin: 0 $space-sm 0 0;
+    }
+  }
+}
+
+.explore-boxes__item--static{
+  background-color: $brand-beige;
+  img{
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    margin: 0 0 $space-sm auto;
+  }
+  span{
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $text-xs - 2;
+    color: $brand-primary;
+    margin: 0 0 $space-xs;
+    display: block;
+  }
+  h2{
+    font-weight: 200;
+  }
+  .details{
+    display: block;
+    height: auto;
+  }
+  p{
+    padding: 0 0 40px;
+    position: relative;
+    &::after {
+      content: "";
+      width: 25px;
+      height: 3px;
+      background-color: #00284A;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+    }
+  }
+}
+
+
+.explore-boxes__item{
+  @include media-below("lg"){
+    &:after{
+      content: "+";
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      position: absolute;
+      right: -30px;
+      bottom: 0px;
+      top: 0;
+      border-radius: 50%;
+      opacity: 1;
+      backdrop-filter: blur(0px);
+      z-index: 200;
+      font-size: 34px;
+      text-align: center;
+      color: $brand-primary;
+      margin: auto;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+  @include media-above("lg"){
+    &:nth-child(1){
+      &:after{
+        content: "+";
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        position: absolute;
+        right: -30px;
+        bottom: -30px;
+        border-radius: 50%;
+        opacity: 1;
+        backdrop-filter: blur(0px);
+        z-index: 200;
+        font-size: 34px;
+        text-align: center;
+        color: $brand-primary;
+      }
+    }
+    &:nth-child(3){
+      &:after{
+        content: "+";
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        position: absolute;
+        left: -30px;
+        bottom: -30px;
+        border-radius: 50%;
+        opacity: 1;
+        backdrop-filter: blur(0px);
+        z-index: 200;
+        font-size: 34px;
+        text-align: center;
+        color: $brand-primary;
+      }
+    }
+  }
+}
+// active state
+.explore-boxes__item{
+  @include media-above("lg"){
+    &.active{
+      background-color: $brand-beige;
+      .explore-boxes__item-content > *{
+        color: $brand-primary;
+      }
+      .explore-boxes__item-content{
+        p{
+          margin: 0 0 $space;
+          height: 100%;
+        }
+        h2{
+          margin: $space-bump 0 $space-sm;
+        }
+        svg{
+          transform: rotate(180deg);
+        }
+        div{
+          margin: 0;
+        }
+      }
+    }
+  }
+  &.slick-slide{
+    .explore-boxes__item-content{
+      div{
+        display: none;
+      }
+      p{
+        margin: 0 0 $space;
+        height: auto;
+      }
+    }
+  }
+  &.slick-current{
+    background-color: $brand-beige-shade;
+    .explore-boxes__item-content > *{
+      color: $brand-white;
+    }
+    p::after{
+      background-color: $brand-white;
+    }
+  }
+}

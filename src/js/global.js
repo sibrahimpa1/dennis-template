@@ -51,43 +51,45 @@ $(document).ready(function(){
 			});
 		},
 		dynamicCount(){
-			var data = [ "11", "189", "456", "10000" ];
-			var animated = false;
+			if($(".dynamic-count").lenght){
+				var data = [ "11", "189", "456", "10000" ];
+				var animated = false;
 
-			const animationDuration = 2000;
-			const frameDuration = 1000 / 60;
-			const totalFrames = Math.round( animationDuration / frameDuration );
-			const easeOutQuad = t => t * ( 2 - t );
-			const animateCountUp = (el, i) => {
-				let frame = 0;
-				const countTo = parseInt( data[i], 10 );
-				const counter = setInterval( () => {
-					frame++;
-					const progress = easeOutQuad( frame / totalFrames );
-					const currentCount = Math.round( countTo * progress );
-					if ( parseInt( data[i] ) !== currentCount + 1 ) {
-						$(el).text(currentCount);
+				const animationDuration = 2000;
+				const frameDuration = 1000 / 60;
+				const totalFrames = Math.round( animationDuration / frameDuration );
+				const easeOutQuad = t => t * ( 2 - t );
+				const animateCountUp = (el, i) => {
+					let frame = 0;
+					const countTo = parseInt( data[i], 10 );
+					const counter = setInterval( () => {
+						frame++;
+						const progress = easeOutQuad( frame / totalFrames );
+						const currentCount = Math.round( countTo * progress );
+						if ( parseInt( data[i] ) !== currentCount + 1 ) {
+							$(el).text(currentCount);
+						}
+						if ( frame === totalFrames ) {
+							clearInterval( counter );
+						}
+					}, frameDuration );
+				};
+				const runAnimations = () => {
+					var countupEls = $(".dynamic-count__counter span");
+					$.each(countupEls, function( index, value ) {
+					  animateCountUp($(this), index);
+					});
+				};
+
+				$(window).on('scroll', function() {
+					var scrollTop = $(this).scrollTop();
+					var topDistance = $(".dynamic-count").offset().top;
+					if ( (topDistance - 200) < scrollTop ) {
+						if(!animated) runAnimations();
+						animated = true;
 					}
-					if ( frame === totalFrames ) {
-						clearInterval( counter );
-					}
-				}, frameDuration );
-			};
-			const runAnimations = () => {
-				var countupEls = $(".dynamic-count__counter span");
-				$.each(countupEls, function( index, value ) {
-				  animateCountUp($(this), index);
 				});
-			};
-
-			$(window).on('scroll', function() {
-				var scrollTop = $(this).scrollTop();
-				var topDistance = $(".dynamic-count").offset().top;
-				if ( (topDistance - 200) < scrollTop ) {
-					if(!animated) runAnimations();
-					animated = true;
-				}
-			});
+			}
 
 		},
 		expandStaticBox(){
@@ -101,6 +103,17 @@ $(document).ready(function(){
 					$(this).removeClass("active");
 				}
 			}, '.expand-boxes__item');
+
+			$(document).on({
+				mouseenter: function () {
+					$(this).addClass("active");
+					$(this).find("span").text("WENIGER")
+				},
+				mouseleave: function () {
+					$(this).find("span").text("Mehr")
+					$(this).removeClass("active");
+				}
+			}, '.explore-boxes__item--dynamic');
 		},
 		mobileSliders(){
 			// services slider
@@ -160,6 +173,27 @@ $(document).ready(function(){
 				}]
 			}
 			slick_on_mobile( customSlider, customSliderSettings);
+
+			// wealth management - explore boxes
+			var exploreBoxesSlider = $('.js-explore-boxes');
+			var exploreBoxesSliderSettings = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1.2,
+				slidesToScroll: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true,
+				responsive: [{
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}]
+			}
+			slick_on_mobile( exploreBoxesSlider, exploreBoxesSliderSettings);
+
 
 			// direct investments - portfolio slider
 			var portfolioSlider = $('.js-portfolio-items');

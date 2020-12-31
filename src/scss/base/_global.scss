@@ -53,6 +53,7 @@ h6 {
 	font-weight: 500;
 	margin: 0 0 $space-md;
 	width: 100%;
+	color: $brand-primary;
 	@include media-above("md"){
 		margin: 0 0 $space-bump;
 		font-size: $text-xl;
@@ -64,8 +65,22 @@ h6 {
 	font-weight: 500;
 	margin: 0 0 $space-md;
 	width: 100%;
+	color: $brand-primary;
 	@include media-above("md"){
 		margin: 0 0 $space-bump;
 		font-size: $text-xl - 4;
+	}
+}
+
+.block-subtext{
+	font-size: $text-sm2;
+	font-weight: 300;
+	margin: 0 0 $space-md;
+	width: 100%;
+	color: $brand-primary;
+	line-height: 1.5;
+	@include media-above("md"){
+		font-size: $text-base;
+		max-width: 70%;
 	}
 }
