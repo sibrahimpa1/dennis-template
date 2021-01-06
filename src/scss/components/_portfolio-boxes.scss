@@ -60,12 +60,14 @@
   object-fit: cover;
   display: block;
   margin: 0 0 0 auto;
+  transition: $base-transition;
 }
 
 .portfolio__box-image{
   max-height: 150px;
   display: block;
   margin: $space auto;
+  transition: $base-transition;
 }
 
 .portfolio__box-info{
@@ -78,6 +80,9 @@
     font-size: $text-xs - 2;
     text-align: right;
     opacity: 0;
+    transition: $extended-transition;
+    color: $brand-white;
+    transition-delay: .3s;
     svg{
       margin: 0px 0px 1px 7px;
     }
@@ -90,11 +95,12 @@
   opacity: 0;
   width: 100%;
   left: 0;
-  padding: $space;
+  padding: $space-bump $space 0;
   h2{
     width: 100%;
     font-weight: 400;
     margin: 0 0 $space;
+    font-size: $text-sm2 - 1;
   }
   ul{
     width: 100%;
@@ -162,13 +168,21 @@
 }
 
 .portfolio__box--dynamic{
+  transition: $base-transition;
   &:hover,
   &.clicked{
     background-color: $brand-green-shade;
+    transition-delay: .3s;
+    & > *{
+      opacity: 0;
+    }
     .portfolio__box-overlay{
       opacity: 1;
+      transition: $extended-transition;
+      transition-delay: .3s;
     }
     .portfolio__box-info{
+      opacity: 1;
       border-color: $brand-white;
       div{
         opacity: 1;
@@ -183,6 +197,7 @@
     h2,
     h3,
     div {
+      transition: $extended-transition;
       color: $brand-white !important;
     }
   }

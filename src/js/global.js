@@ -124,7 +124,21 @@ $(document).ready(function(){
 				slidesToShow: 1,
 				infinite: false,
 				autoplay: false,
-				centerMode: true
+				centerMode: true,
+				responsive: [{
+					breakpoint: 700,
+					settings: {
+						slidesToShow: 1.3,
+						slidesToScroll: 1.3
+					}
+				},
+				{
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}]
 			}
 			slick_on_mobile( servicesSlider, servicesSettings);
 
@@ -137,7 +151,21 @@ $(document).ready(function(){
 				slidesToScroll: 1,
 				infinite: false,
 				autoplay: false,
-				centerMode: true
+				centerMode: true,
+				responsive: [{
+					breakpoint: 700,
+					settings: {
+						slidesToShow: 1.3,
+						slidesToScroll: 1.3
+					}
+				},
+				{
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}]
 			}
 			slick_on_mobile( newsSlider, newsSettings);
 
