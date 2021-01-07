@@ -30,7 +30,7 @@
 	}
 
 	&.headroom--pinned {
-		padding-top: $space-xs;
+		padding-top: $space-sm;
     padding-bottom: $space-xs;
 		height: 190px;
 		@include media-below("lg") {
