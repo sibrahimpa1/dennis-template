@@ -7,8 +7,8 @@
 	height: 190px;
 
 	&--static {
-		padding-top: $space;
-		padding-bottom: $space;
+		padding-top: $space-sm;
+    padding-bottom: $space-xs;
 		min-height: 100px;
 		@include media-below("lg") {
 			padding-top: $space;
@@ -18,8 +18,8 @@
 
 	&.headroom--not-top,
 	&.headroom--unpinned {
-		padding-top: $space;
-		padding-bottom: $space;
+		padding-top: $space-xs;
+    padding-bottom: $space-xs;
 		height: 100px;
 
 		.header__nav-top {
@@ -30,12 +30,12 @@
 	}
 
 	&.headroom--pinned {
-		padding-top: $space;
-		padding-bottom: $space;
+		padding-top: $space-xs;
+    padding-bottom: $space-xs;
 		height: 190px;
 		@include media-below("lg") {
-			padding-top: $space;
-			padding-bottom: $space;
+			padding-top: $space-sm;
+			padding-bottom: $space-sm;
 		}
 
 		.header__inner {
@@ -50,12 +50,12 @@
 	}
 
 	&.headroom--bottom {
-		padding-top: $space;
-		padding-bottom: $space;
+		padding-top: $space-sm;
+    padding-bottom: $space-xs;
 		height: 190px;
 		@include media-below("lg") {
-			padding-top: $space;
-			padding-bottom: $space;
+			padding-top: $space-sm;
+			padding-bottom: $space-sm;
 		}
 
 		.header__inner {
@@ -96,7 +96,9 @@
 .header__dropdown-list {
 	border-right: 1px solid $border-color;
 	padding: 0 $space-bump;
-
+	@include media-above("lg"){
+		max-width: 200px;
+	}
 	&:last-child {
 		border: 0;
 	}
@@ -306,6 +308,7 @@
 				bottom: 10px;
 				left: $space-sm;
 				opacity: 0;
+				transition: all .5s ease;
 				@include media-above("xl") {
 					left: $space;
 				}

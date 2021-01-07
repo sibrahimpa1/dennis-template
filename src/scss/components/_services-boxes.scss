@@ -132,12 +132,12 @@
 				position: absolute;
 				bottom: 0;
 				left: 0;
-				opacity: 0;
+				opacity: 1;
 				transition: $base-transition;
 			}
 		}
 
-		a {
+		span {
 			font-size: $text-sm;
 			font-weight: 200;
 			text-transform: uppercase;

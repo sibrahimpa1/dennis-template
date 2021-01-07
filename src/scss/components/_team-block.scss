@@ -14,12 +14,17 @@
       flex-basis: 24%;
     }
     h2{
-      font-size: $text-md;
+      font-size: $text-md - 2;
       margin: 0 0 $space-xs;
     }
     p{
-      font-size: $text-sm;
+      font-size: $text-xs;
       font-weight: 200;
+    }
+    &:hover{
+      & > *{
+        color: $brand-primary;
+      }
     }
   }
   &__image{

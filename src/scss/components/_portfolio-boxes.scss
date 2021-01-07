@@ -83,6 +83,9 @@
     transition: $extended-transition;
     color: $brand-white;
     transition-delay: .3s;
+    position: absolute;
+    right: 0;
+    bottom: -15px;
     svg{
       margin: 0px 0px 1px 7px;
     }

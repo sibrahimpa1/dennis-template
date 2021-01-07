@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Headroom from './headroom/headroom.js';
 import './slick/slick.js';
+import { CountUp } from 'countup.js';
 
 $(document).ready(function(){
 	const GlobalScripts = {
@@ -51,36 +52,41 @@ $(document).ready(function(){
 			});
 		},
 		dynamicCount(){
-			if($(".dynamic-count").lenght){
-				var data = [ "11", "189", "456", "10000" ];
+			if($(".dynamic-count").length){
 				var animated = false;
-
-				const animationDuration = 2000;
-				const frameDuration = 1000 / 60;
-				const totalFrames = Math.round( animationDuration / frameDuration );
-				const easeOutQuad = t => t * ( 2 - t );
-				const animateCountUp = (el, i) => {
-					let frame = 0;
-					const countTo = parseInt( data[i], 10 );
-					const counter = setInterval( () => {
-						frame++;
-						const progress = easeOutQuad( frame / totalFrames );
-						const currentCount = Math.round( countTo * progress );
-						if ( parseInt( data[i] ) !== currentCount + 1 ) {
-							$(el).text(currentCount);
-						}
-						if ( frame === totalFrames ) {
-							clearInterval( counter );
-						}
-					}, frameDuration );
-				};
+				const easingFn = function (t, b, c, d) {
+				  var ts = (t /= d) * t;
+				  var tc = ts * t;
+				  return b + c * (tc * ts + -5 * ts * ts + 10 * tc + -10 * ts + 5 * t);
+			  }
 				const runAnimations = () => {
-					var countupEls = $(".dynamic-count__counter span");
-					$.each(countupEls, function( index, value ) {
-					  animateCountUp($(this), index);
-					});
+					const options1 = {
+					  duration: 6,
+				 	  easingFn,
+					};
+					const options2 = {
+					  duration: 5,
+				 	  easingFn,
+					};
+					const options3 = {
+					  duration: 4,
+				  	prefix: '> ',
+					  easingFn,
+					};
+					const options4 = {
+					  duration: 3,
+						prefix: '~ ',
+					  easingFn,
+					};
+					var countUp1 = new CountUp('count1', 11, options1);
+					var countUp2 = new CountUp('count2', 189, options2);
+					var countUp3 = new CountUp('count3', 456, options3);
+					var countUp4 = new CountUp('count4', 10000, options4);
+					countUp1.start();
+					countUp2.start();
+					countUp3.start();
+					countUp4.start();
 				};
-
 				$(window).on('scroll', function() {
 					var scrollTop = $(this).scrollTop();
 					var topDistance = $(".dynamic-count").offset().top;
@@ -90,7 +96,6 @@ $(document).ready(function(){
 					}
 				});
 			}
-
 		},
 		expandStaticBox(){
 			$(document).on({

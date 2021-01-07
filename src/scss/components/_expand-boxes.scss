@@ -50,6 +50,9 @@
     transition: $base-transition;
     height: 0;
     overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   div{
     font-size: $text-sm;
@@ -86,7 +89,7 @@
   }
   &.slick-slide{
     .expand-boxes__item-content{
-      bottom: $space-md;
+      bottom: 0;
       div{
         display: none;
       }

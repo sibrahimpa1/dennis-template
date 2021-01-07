@@ -75,6 +75,9 @@
     transition: $base-transition;
     height: 0;
     overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   div{
     font-size: $text-xs;

@@ -9,7 +9,7 @@
 	}
 	@include media-above('md') {
 		max-width: get-breakpoint('horizontal', 'md');
-		padding: 0 $space-md;
+		padding: 0 $space-md - 5;
 	}
 	@include media-above('lg') {
 		max-width: get-breakpoint('horizontal', 'lg');
