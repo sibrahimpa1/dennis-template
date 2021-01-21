@@ -13,6 +13,7 @@
 		@include media-below("lg") {
 			padding-top: $space;
 			padding-bottom: $space;
+			min-height: 80px;
 		}
 	}
 
@@ -74,12 +75,13 @@
 	}
 
 	@include media-below("lg"){
-		height: 100px !important;
+		height: 80px !important;
 	}
 }
 
 .header__nav {
 	flex: 1;
+  margin: 0 -20px 0 0;
 }
 
 .header__dropdown {
@@ -101,6 +103,7 @@
 	}
 	&:last-child {
 		border: 0;
+		max-width: 100%;
 	}
 
 	h2 {
@@ -179,7 +182,7 @@
 		}
 
 		ul {
-			min-width: 200px;
+			min-width: 0;
 		}
 	}
 
@@ -288,17 +291,6 @@
 				padding: $space;
 			}
 
-			&:after {
-				content: attr(data-text);
-				content: attr(data-text)/"";
-				height: 0;
-				visibility: hidden;
-				overflow: hidden;
-				user-select: none;
-				pointer-events: none;
-				font-weight: bold;
-			}
-
 			&:before {
 				content: "";
 				width: 35px;
@@ -308,6 +300,7 @@
 				bottom: 10px;
 				left: $space-sm;
 				opacity: 0;
+				width: 0;
 				transition: all .5s ease;
 				@include media-above("xl") {
 					left: $space;
@@ -316,10 +309,9 @@
 
 			&:hover {
 				color: $brand-primary;
-				font-weight: 400;
-
 				&:before {
 					opacity: 1;
+					width: 35px;
 				}
 			}
 

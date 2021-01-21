@@ -3,13 +3,15 @@
 	color: $brand-white;
 	padding: $space-lg 0 $space-md;
 	font-weight: 200;
-	margin: $space-xl 0 0;
-
+	margin: $space-md 0 0;
+	@include media-above("lg") {
+		margin: $space-xl 0 0;
+	}
 	&__lists {
 		order: 1;
 		width: 100%;
 		flex-wrap: wrap;
-		@include media-above("md") {
+		@include media-above("lg") {
 			order: 2;
 			width: auto;
 			flex-wrap: nowrap;
@@ -21,8 +23,8 @@
 		margin: 0 0 $space-md;
 		padding: 0 $space-sm 0 0;
 		@include media-above("md") {
-			padding: 0 $space;
-			width: auto;
+			padding: 0 $space 0 0;
+			width: 25%;
 			margin: 0;
 
 			&:last-child {
@@ -31,6 +33,7 @@
 		}
 		@include media-above("lg") {
 			padding: 0 $space-md;
+			width: auto;
 
 			&:last-child {
 				padding: 0 0 0 $space-md;
@@ -83,7 +86,7 @@
 		order: 2;
 		width: 100%;
 		margin: $space 0;
-		@include media-above("md") {
+		@include media-above("lg") {
 			max-width: 360px;
 			order: 1;
 			margin: 0;
@@ -99,13 +102,17 @@
 			display: block;
 			margin: 0 0 $space-xs;
 		}
+		a{
+			color: white;
+		}
 	}
 
 	&__social {
+		display: flex;
 		a {
-			display: inline-block;
+			display: block;
 			margin: 0 $space-xs 0 0;
-
+			cursor: pointer;
 			svg {
 				color: $brand-white;
 				width: 25px !important;
@@ -116,7 +123,7 @@
 
 	&__copyright {
 		margin: 0;
-		font-size: $text-xs - 2;
+		font-size: $text-xs;
 		width: 100%;
 		order: 3;
 		@include media-above("md") {

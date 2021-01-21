@@ -4,8 +4,7 @@ body {
 	max-width: 2000px;
 	margin: 0 auto !important;
 	.content{
-		min-height: 200vh;
-		padding: 100px 0 0;
+		padding: 80px 0 0;
 		@include media-above("lg"){
 			padding: 190px 0 0;
 		}

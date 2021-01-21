@@ -133,8 +133,8 @@ $(document).ready(function(){
 				responsive: [{
 					breakpoint: 700,
 					settings: {
-						slidesToShow: 1.3,
-						slidesToScroll: 1.3
+						slidesToShow: 1,
+						slidesToScroll: 1
 					}
 				},
 				{
@@ -153,15 +153,14 @@ $(document).ready(function(){
 				dots: false,
 				arrows: false,
 				slidesToShow: 1,
-				slidesToScroll: 1,
 				infinite: false,
 				autoplay: false,
 				centerMode: true,
 				responsive: [{
 					breakpoint: 700,
 					settings: {
-						slidesToShow: 1.3,
-						slidesToScroll: 1.3
+						slidesToShow: 1,
+						slidesToScroll: 1
 					}
 				},
 				{

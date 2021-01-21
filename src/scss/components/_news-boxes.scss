@@ -8,19 +8,18 @@
 		grid-template-columns: 2fr 1fr;
 		grid-template-rows: 50% 50%;
 		width: 100%;
-		column-gap: 20px;
-		row-gap: 20px;
+		column-gap: $space;
+		row-gap: $space;
 	}
 
 	&__box {
 		height: 100%;
 		display: flex;
-		flex-direction: column;
 		background-color: $brand-light-gray;
 		transition: $base-transition;
 
-		@include media-above("lg") {
-			flex-direction: row;
+		@include media-below("lg") {
+			flex-direction: column;
 		}
 		img {
 			width: 100%;
@@ -31,7 +30,6 @@
 		@include media-above("lg") {
 			img {
 				width: 50%;
-				height: auto;
 				max-height: 100%;
 			}
 		}
@@ -50,7 +48,6 @@
 	}
 
 	&__box-content {
-		flex: 1;
 		padding: $space-bump $space $space;
 		color: $brand-primary;
 		display: flex;
@@ -82,10 +79,11 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			display: -webkit-box;
-			-webkit-line-clamp: 4;
+			-webkit-line-clamp: 5;
 			-webkit-box-orient: vertical;
+			margin: 0 0 $space-sm;
 			@include media-above("lg") {
-				-webkit-line-clamp: 6;
+				-webkit-line-clamp: 7;
 			}
 		}
 
@@ -119,19 +117,22 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 				display: -webkit-box;
-				-webkit-line-clamp: 20;
+				-webkit-line-clamp: 15;
 				-webkit-box-orient: vertical;
 				@include media-above("lg") {
-					-webkit-line-clamp: 7;
-				}
-				@include media-above("xxl") {
-					-webkit-line-clamp: 8;
+					-webkit-line-clamp: 6;
 				}
 				@include media-above("xxxl") {
-					-webkit-line-clamp: 7;
+					-webkit-line-clamp: 5;
 				}
 			}
 		}
+	}
+
+	.slick-track {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	.slick-list {
@@ -146,7 +147,14 @@
 		display: flex;
 		height: auto;
 		outline: none !important;
+		@include media-below("lg") {
+			margin: 0 $space-sm 0 0;
+		}
+		&:last-child {
+			margin: 0;
+		}
 	}
+
 }
 
 .top-wrap {
@@ -156,7 +164,7 @@
 	}
 	@include media-below("lg") {
 		.grid__box {
-			margin: 0 20px 0 0;
+			margin: 0 0 0 0;
 		}
 	}
 }
@@ -168,7 +176,7 @@
 	}
 	@include media-below("lg") {
 		.grid__box {
-			margin: 0 20px 0 0;
+			margin: 0 0 0 0;
 		}
 	}
 }
@@ -176,10 +184,10 @@
 .double-wrap {
 	@include media-below("lg") {
 		.grid__box {
-			margin: 0 20px 20px 0;
+			margin: 0 0 $space-sm 0;
 
 			&:last-child {
-				margin: 0 20px 0 0;
+				margin: 0 0 0 0;
 			}
 		}
 	}
@@ -188,19 +196,11 @@
 		grid-row-end: 3;
 
 		.grid__box {
-			margin: 0 0 20px;
+			margin: 0 0 $space-sm;
 
 			&:last-child {
 				margin: 0;
 			}
-		}
-	}
-}
-
-.grid__box{
-	&:hover {
-		svg {
-			margin: 0 -10px 1px 7px;
 		}
 	}
 }

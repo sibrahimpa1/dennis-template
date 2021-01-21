@@ -21,7 +21,9 @@
 			display: flex;
 			height: auto;
 			outline: none !important;
-
+			@include media-below("lg") {
+				margin: 0 $space-sm 0 0;
+			}
 			&:last-child {
 				margin: 0;
 			}
@@ -156,10 +158,6 @@
 
 			&:hover {
 				color: $brand-white;
-
-				svg {
-					margin: 0 -10px 1px 7px;
-				}
 			}
 		}
 	}
