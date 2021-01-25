@@ -128,14 +128,21 @@
 
 			&:after {
 				content: "";
-				width: 35px;
 				height: 3px;
 				background-color: $brand-white;
 				position: absolute;
 				bottom: 0;
 				left: 0;
-				opacity: 1;
+				opacity: 0;
+				width: 0;
 				transition: $base-transition;
+			}
+
+			&.visible{
+				&:after{
+					width: 35px;
+					opacity: 1;
+				}
 			}
 		}
 

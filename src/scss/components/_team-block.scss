@@ -2,16 +2,20 @@
   padding: $space-lg 0;
   &__member{
     color: $brand-primary;
-    margin: 0 0 $space-md;
-    flex-basis: 24%;
+    margin: 0 1% $space-md 0;
     position: relative;
-    flex-basis: 100%;
-    @include media-above("sm"){
-      margin: 0 1% $space-md 0;
-      flex-basis: 49%;
+    flex-basis: 49%;
+    @include media-above("md"){
+      flex-basis: 32%;
     }
     @include media-above("lg"){
       flex-basis: 24%;
+    }
+    @include media-above("xxl"){
+      flex-basis: 19%;
+    }
+    @include media-above("xxxl"){
+      flex-basis: 15.6%;
     }
     h2{
       font-size: $text-md - 2;

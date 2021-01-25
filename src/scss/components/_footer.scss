@@ -32,11 +32,11 @@
 			}
 		}
 		@include media-above("lg") {
-			padding: 0 $space-md;
+			padding: 0 $space;
 			width: auto;
 
 			&:last-child {
-				padding: 0 0 0 $space-md;
+				padding: 0 0 0 $space;
 			}
 		}
 

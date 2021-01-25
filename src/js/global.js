@@ -15,6 +15,7 @@ $(document).ready(function(){
 			this.expandStaticBox();
 			this.dynamicCount();
 			this.customSliderNav();
+			this.servicesOnScrollLine();
 		},
 	  cache() {
 	    this.$doc = $(document);
@@ -39,6 +40,20 @@ $(document).ready(function(){
 					$(this).addClass("active");
 					return;
 				}
+			});
+		},
+		servicesOnScrollLine(){
+			$(window).scroll(function() {
+			    var top_of_element = $(".services__box-bottom span").offset().top;
+					var elementsHeight = $(".services__box-bottom span").outerHeight();
+			    var bottom_of_element = $(".services__box-bottom span").offset().top + $(".services__box-bottom span").outerHeight();
+			    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+			    var top_of_screen = $(window).scrollTop();
+
+			    if ((bottom_of_screen > top_of_element + 100) && (top_of_screen < bottom_of_element)){
+						console.log('visible');
+			        $(".services__box-bottom p").addClass('visible');
+			    }
 			});
 		},
 		customSliderNav(){
@@ -250,7 +265,7 @@ $(document).ready(function(){
 	  	// slick on mobile
 			function slick_on_mobile(slider, settings){
 				$(window).on('load resize', function() {
-					if ($(window).width() > 960) {
+					if ($(window).width() >= 960) {
 						if (slider.hasClass('slick-initialized')) {
 							slider.slick('unslick');
 						}
@@ -264,7 +279,7 @@ $(document).ready(function(){
 			};
 
 			$(window).on('load resize', function() {
-				if ($(window).width() > 960) {
+				if ($(window).width() >= 960) {
 					$(".portfolio__box--dynamic").removeClass("clicked");
 					$(".portfolio__box--dynamic").unbind(addDoubleTap());
 				}

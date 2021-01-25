@@ -52,6 +52,9 @@
     font-weight: 300;
     font-size: $text-md;
     margin: 0 0 $space-sm;
+    @include media-below("xxl"){
+      margin: 0 0 $space-bump;
+    };
   }
 }
 
@@ -74,6 +77,9 @@
   padding: $space 0 0;
   border-top: 1px solid rgb(1 40 74 / 0.3);
   position: relative;
+  @include media-below("lg"){
+    height: 100%;
+  };
   div{
     text-transform: uppercase;
     font-weight: 300;
@@ -86,6 +92,15 @@
     position: absolute;
     right: 0;
     bottom: -15px;
+    @include media-below("xxl"){
+      bottom: -30px;
+    };
+    @include media-below("lg"){
+      bottom: 0px;
+    };
+    @include media-below("md"){
+      bottom: -10px;
+    };
     svg{
       margin: 0px 0px 1px 7px;
     }
@@ -172,6 +187,9 @@
 
 .portfolio__box--dynamic{
   transition: $base-transition;
+  @include media-below("md"){
+    padding: 20px 20px 40px;
+  };
   &:hover,
   &.clicked{
     background-color: $brand-green-shade;

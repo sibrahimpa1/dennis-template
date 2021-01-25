@@ -5,7 +5,7 @@
   }
   &__bg-image{
     height: 350px;
-    @include media-above("md"){
+    @include media-above("lg"){
       height: 500px;
     }
     @include media-above("xxl"){

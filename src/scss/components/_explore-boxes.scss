@@ -1,5 +1,5 @@
 .explore-boxes{
-  padding: $space-lg 0;
+  padding: $space-lg 0 $space;
 }
 
 .explore-boxes__inner{
@@ -74,7 +74,7 @@
     font-weight: 200;
     transition: $base-transition;
     height: 0;
-    overflow: scroll;
+    overflow: hidden;
     &::-webkit-scrollbar {
       display: none;
     }
