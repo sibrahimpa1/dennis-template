@@ -16,6 +16,7 @@ $(document).ready(function(){
 			this.dynamicCount();
 			this.customSliderNav();
 			this.servicesOnScrollLine();
+			this.heroSlider();
 		},
 	  cache() {
 	    this.$doc = $(document);
@@ -43,18 +44,20 @@ $(document).ready(function(){
 			});
 		},
 		servicesOnScrollLine(){
-			$(window).scroll(function() {
-			    var top_of_element = $(".services__box-bottom span").offset().top;
-					var elementsHeight = $(".services__box-bottom span").outerHeight();
-			    var bottom_of_element = $(".services__box-bottom span").offset().top + $(".services__box-bottom span").outerHeight();
-			    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-			    var top_of_screen = $(window).scrollTop();
+			if($(".services__box-bottom").length){
+				$(window).scroll(function() {
+						var top_of_element = $(".services__box-bottom span").offset().top;
+						var elementsHeight = $(".services__box-bottom span").outerHeight();
+						var bottom_of_element = $(".services__box-bottom span").offset().top + $(".services__box-bottom span").outerHeight();
+						var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+						var top_of_screen = $(window).scrollTop();
 
-			    if ((bottom_of_screen > top_of_element + 100) && (top_of_screen < bottom_of_element)){
-						console.log('visible');
-			        $(".services__box-bottom p").addClass('visible');
-			    }
-			});
+						if ((bottom_of_screen > top_of_element + 100) && (top_of_screen < bottom_of_element)){
+							console.log('visible');
+								$(".services__box-bottom p").addClass('visible');
+						}
+				});
+			}
 		},
 		customSliderNav(){
 			$(".custom-slider__desktop-content").eq(0).show();
@@ -135,6 +138,21 @@ $(document).ready(function(){
 				}
 			}, '.explore-boxes__item--dynamic');
 		},
+		heroSlider(){
+			var heroSlider = $('.js-hero-slider');
+			var heroSliderSettings = {
+				dots: true,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				autoplay: true,
+				fade: true,
+			  cssEase: 'linear',
+				autoplaySpeed: 3000
+			}
+			if($('.js-hero-slider').length) heroSlider.slick(heroSliderSettings);
+		},
 		mobileSliders(){
 			// services slider
 			var servicesSlider = $('.js-services');
@@ -160,7 +178,6 @@ $(document).ready(function(){
 					}
 				}]
 			}
-			slick_on_mobile( servicesSlider, servicesSettings);
 
 			// news slider
 			var newsSlider = $('.js-news');
@@ -186,7 +203,6 @@ $(document).ready(function(){
 					}
 				}]
 			}
-			slick_on_mobile( newsSlider, newsSettings);
 
 			// family expand boxes slider
 			var expandBoxesSlider = $('.js-expand-boxes');
@@ -199,34 +215,13 @@ $(document).ready(function(){
 				autoplay: false,
 				centerMode: true
 			}
-			slick_on_mobile( expandBoxesSlider, expandBoxesSettings);
-
-			// direct investments - portfolio slider
-			var customSlider = $('.js-custom-slider');
-			var customSliderSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1.2,
-				slidesToScroll: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
-			slick_on_mobile( customSlider, customSliderSettings);
 
 			// wealth management - explore boxes
 			var exploreBoxesSlider = $('.js-explore-boxes');
 			var exploreBoxesSliderSettings = {
 				dots: false,
 				arrows: false,
-				slidesToShow: 1.2,
+				slidesToShow: 1,
 				slidesToScroll: 1,
 				infinite: false,
 				autoplay: false,
@@ -239,15 +234,32 @@ $(document).ready(function(){
 					}
 				}]
 			}
-			slick_on_mobile( exploreBoxesSlider, exploreBoxesSliderSettings);
 
+			// direct investments - portfolio slider
+			var customSlider = $('.js-custom-slider');
+			var customSliderSettings = {
+				dots: false,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: false,
+				autoplay: false,
+				centerMode: true,
+				responsive: [{
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}]
+			}
 
 			// direct investments - portfolio slider
 			var portfolioSlider = $('.js-portfolio-items');
 			var portfolioSliderSettings = {
 				dots: false,
 				arrows: false,
-				slidesToShow: 1.2,
+				slidesToShow: 1,
 				slidesToScroll: 1,
 				infinite: false,
 				autoplay: false,
@@ -260,16 +272,27 @@ $(document).ready(function(){
 					}
 				}]
 			}
+
 			slick_on_mobile( portfolioSlider, portfolioSliderSettings);
+			slick_on_mobile( exploreBoxesSlider, exploreBoxesSliderSettings);
+			slick_on_mobile( customSlider, customSliderSettings);
+			slick_on_mobile( expandBoxesSlider, expandBoxesSettings);
+			slick_on_mobile( newsSlider, newsSettings);
+			slick_on_mobile( servicesSlider, servicesSettings);
 
 	  	// slick on mobile
 			function slick_on_mobile(slider, settings){
+				if ($(window).width() < 960) {
+					if (!slider.hasClass('slick-initialized')) {
+						return slider.slick(settings);
+					}
+				}
 				$(window).on('load resize', function() {
 					if ($(window).width() >= 960) {
 						if (slider.hasClass('slick-initialized')) {
 							slider.slick('unslick');
 						}
-						return
+						return;
 					}
 					if (!slider.hasClass('slick-initialized')) {
 						return slider.slick(settings);
@@ -296,7 +319,7 @@ $(document).ready(function(){
 						$(this).addClass("clicked");
 					}
 					else if($(this).hasClass("clicked")){
-						console.log('go for it');
+						// console.log('go for it');
 					}
 				});
 			}

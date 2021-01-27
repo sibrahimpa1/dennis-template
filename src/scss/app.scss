@@ -19,6 +19,7 @@
 @import 'components/nav';
 @import 'components/footer';
 @import 'components/hero';
+@import 'components/hero-slider';
 @import 'components/basic-text';
 @import 'components/services-boxes';
 @import 'components/news-boxes';
@@ -33,6 +34,9 @@
 @import 'components/portfolio-boxes';
 @import 'components/explore-boxes';
 @import 'components/text-image';
+@import 'components/portfolio-data';
+@import 'components/portfolio-nav';
+@import 'components/portfolio-spotlight';
 
 /* Browser specific styles */
 @import 'dirty/hacks';

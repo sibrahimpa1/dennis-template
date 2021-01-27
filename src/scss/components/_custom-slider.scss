@@ -163,9 +163,18 @@
     padding: 0 !important;
   }
   .slick-slide {
-		display: flex;
-		height: auto;
-		outline: none !important;
+    margin: 0 $space 0 0;
+    display: flex;
+    height: auto;
+    outline: none !important;
+    @include media-below("lg") {
+      margin: 0 5px 0;
+    }
+    @include media-above("lg"){
+      &:last-child {
+        margin: 0;
+      }
+    }
 	}
   .slick-track {
     display: flex;
@@ -178,8 +187,10 @@
   @include media-above("sm"){
     padding: $space-bump;
   }
-  &:last-child{
-    margin: 0;
+  @include media-above("lg"){
+    &:last-child{
+      margin: 0;
+    }
   }
   img{
     margin: -100px 0 $space-md auto;

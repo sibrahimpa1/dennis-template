@@ -1,0 +1,118 @@
+.portfolio-data {
+	padding: $space-lg 0;
+
+	.wrapper {
+		display: flex;
+		position: unset;
+		@include media-below("lg") {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__left {
+		padding: 0 $space-md 0 0;
+		@include media-above("lg") {
+			flex: 1;
+		}
+
+		p {
+			color: #00284A;
+			font-size: $text-sm2;
+			font-weight: 200;
+			line-height: 1.5;
+			margin: 0 0 $space;
+			@include media-above("md") {
+				font-size: $text-base + 2;
+			}
+		}
+	}
+
+	&__right {
+		width: 100%;
+		@include media-above("lg") {
+			margin: 0 -100px 0 0;
+			width: auto;
+		}
+		@include media-above("xxl") {
+			margin: 0 -150px 0 0;
+		}
+		@include media-above("xxxl") {
+			margin: 0 -200px 0 0;
+		}
+	}
+
+	&__box {
+		padding: $space-lg2 $space-md $space-xl;
+		background-color: #9FADA2;
+		right: 0;
+		width: 100%;
+		margin: $space-lg 0 0;
+		@include media-above("lg") {
+			width: 450px;
+			margin: 0;
+		}
+		@include media-below("md") {
+			margin: $space-lg -20px 0;
+			padding: $space-md2 $space $space-xl;
+			width: calc(100% + 40px);
+		}
+
+		h2 {
+			width: 100%;
+			font-weight: 400;
+			margin: 0 0 $space-md;
+			font-size: $text-xl - 2;
+			@include media-below("md") {
+				font-size: $text-lg;
+			}
+		}
+
+		ul {
+			position: relative;
+			width: 100%;
+
+			:after {
+				content: "";
+				height: 3px;
+				width: 40px;
+				position: absolute;
+				bottom: -50px;
+				left: 0;
+				background-color: #fff;
+			}
+
+			li {
+				margin: 0 0 $space-bump;
+				padding: 0 5px 0 0;
+				@include media-above("xxl") {}
+
+				&:nth-child(even) {
+					padding: 0;
+				}
+			}
+
+			span {
+				font-size: $text-sm;
+				font-weight: 100;
+				line-height: 1.2;
+				display: block;
+				margin: 0 0 2px;
+				text-transform: uppercase;
+			}
+
+			div {
+				font-size: $text-base;
+				font-weight: 300;
+			}
+		}
+
+		div,
+		h1,
+		h2,
+		h3,
+		p,
+		span {
+			color: $brand-white;
+		}
+	}
+}

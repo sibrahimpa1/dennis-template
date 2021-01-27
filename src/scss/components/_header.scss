@@ -5,10 +5,12 @@
 	z-index: 2000;
 	transition: $base-transition;
 	height: 190px;
+	left: 0;
+	right: 0;
 
 	&--static {
 		padding-top: $space-sm;
-    padding-bottom: $space-xs;
+		padding-bottom: $space-xs;
 		min-height: 100px;
 		@include media-below("lg") {
 			padding-top: $space;
@@ -20,7 +22,7 @@
 	&.headroom--not-top,
 	&.headroom--unpinned {
 		padding-top: $space-xs;
-    padding-bottom: $space-xs;
+		padding-bottom: $space-xs;
 		height: 100px;
 
 		.header__nav-top {
@@ -32,7 +34,7 @@
 
 	&.headroom--pinned {
 		padding-top: $space-sm;
-    padding-bottom: $space-xs;
+		padding-bottom: $space-xs;
 		height: 190px;
 		@include media-below("lg") {
 			padding-top: $space-sm;
@@ -52,7 +54,7 @@
 
 	&.headroom--bottom {
 		padding-top: $space-sm;
-    padding-bottom: $space-xs;
+		padding-bottom: $space-xs;
 		height: 190px;
 		@include media-below("lg") {
 			padding-top: $space-sm;
@@ -73,15 +75,14 @@
 	&__inner {
 		position: relative;
 	}
-
-	@include media-below("lg"){
+	@include media-below("lg") {
 		height: 80px !important;
 	}
 }
 
 .header__nav {
 	flex: 1;
-  margin: 0 -20px 0 0;
+	margin: 0 -20px 0 0;
 }
 
 .header__dropdown {
@@ -94,14 +95,18 @@
 	padding: $space-md 0;
 	background-color: $brand-secondary;
 	transition: $base-transition;
+	@include media-below("xxl"){
+		top: 55px;
+	}
 }
 
 .header__dropdown-list {
 	border-right: 1px solid $border-color;
 	padding: 0 $space-bump;
-	@include media-above("lg"){
+	@include media-above("lg") {
 		max-width: 200px;
 	}
+
 	&:last-child {
 		border: 0;
 		max-width: 100%;
@@ -126,6 +131,7 @@
 			font-weight: 400;
 			display: flex;
 			align-items: center;
+
 			&:after {
 				content: attr(data-text);
 				content: attr(data-text)/"";
@@ -134,8 +140,10 @@
 				overflow: hidden;
 				user-select: none;
 				pointer-events: none;
+				display: block;
 				font-weight: bold;
 			}
+
 			&:hover {
 				color: $brand-primary;
 				font-weight: bold;
@@ -145,7 +153,7 @@
 		img {
 			width: 25px;
 			display: inline-block;
-			margin: 0 10px 0 0;
+			margin: 0 10px -8px 0;
 		}
 	}
 }
@@ -155,6 +163,9 @@
 	margin: 0 0 $space-md;
 	transition: $base-transition;
 
+	.header__dropdown{
+		min-width: 300px;
+	}
 	.header__nav-dropdown {
 		position: relative;
 		flex-direction: column;
@@ -171,6 +182,7 @@
 
 		&:hover {
 			background: $brand-secondary;
+
 			& > .chevron {
 				transform: rotate(180deg);
 			}
@@ -184,6 +196,9 @@
 
 		ul {
 			min-width: 0;
+			li a{
+				display: inline-block;
+			}
 		}
 	}
 
@@ -196,7 +211,6 @@
 			margin: 0 $space-sm 0 0;
 			cursor: pointer;
 			padding: $space $space-sm;
-
 			@include media-above("xl") {
 				font-size: $text-sm - 3;
 			}
@@ -229,9 +243,11 @@
 			text-transform: uppercase;
 			font-size: $text-xs;
 			font-weight: 400;
-			&:hover{
+
+			&:hover {
 				font-weight: bold;
 			}
+
 			&.active {
 				font-weight: bold;
 			}
@@ -286,7 +302,7 @@
 			cursor: pointer;
 			@include media-above("lg") {
 				font-size: $text-sm;
-		    padding: $space $space-sm;
+				padding: $space $space-sm;
 			}
 			@include media-above("xxl") {
 				font-size: $text-sm2 - 1;
@@ -304,7 +320,7 @@
 				left: $space-sm;
 				opacity: 0;
 				width: 0;
-				transition: all .5s ease;
+				transition: all 0.5s ease;
 				@include media-above("xl") {
 					left: $space;
 				}
@@ -312,6 +328,7 @@
 
 			&:hover {
 				color: $brand-primary;
+
 				&:before {
 					opacity: 1;
 					width: 35px;
@@ -349,9 +366,10 @@
 	}
 }
 
-.header a.active{
+.header a.active {
 	color: $brand-primary;
 	font-weight: 400;
+
 	&:before {
 		opacity: 1;
 	}

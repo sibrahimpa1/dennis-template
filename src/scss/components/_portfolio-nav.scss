@@ -1,0 +1,55 @@
+.portfolio-nav {
+	padding: $space-xl 0;
+
+	&__links-row {
+		margin: 0 0 $space-md;
+		@include media-below("sm") {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		a {
+			font-size: $text-sm2;
+			text-transform: uppercase;
+			font-weight: 300;
+			margin: 0 $space-xl 0 0;
+			@include media-above("sm") {
+				&:last-child {
+					margin: 0;
+				}
+			}
+			@include media-below("lg") {
+				font-size: $text-sm;
+				margin: 0 $space-md 0 0;
+			}
+			@include media-below("sm") {
+				margin: $space-sm auto;
+				width: 100%;
+				text-align: center;
+			}
+
+			.fa-chevron-right {
+				margin: 0 0 2px $space-sm;
+				@include media-below("lg") {
+					margin: 0 0 0 $space-sm;
+				}
+			}
+
+			.fa-chevron-left {
+				margin: 0 $space-sm 2px 0;
+				@include media-below("lg") {
+					margin: 0 $space-sm 0 0;
+				}
+			}
+
+			svg {
+				height: 15px;
+			}
+		}
+	}
+}

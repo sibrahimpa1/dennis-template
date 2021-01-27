@@ -71,7 +71,10 @@
 		img {
 			transition: $base-transition;
 			object-fit: cover;
-			height: 300px;
+			height: 250px;
+			@include media-above("md") {
+				min-height: 300px;
+			}
 			@include media-above("lg") {
 				min-height: 250px;
 			}
@@ -154,7 +157,12 @@
 			display: block;
 			position: relative;
 			margin: -1*$space 0 0 auto;
-
+			@include media-below("xxl"){
+				margin: -10px 0 0 auto;
+			}
+			@include media-below("lg"){
+				margin: 0px 0 0 auto;
+			}
 			svg {
 				width: 14px !important;
 				height: 14px;

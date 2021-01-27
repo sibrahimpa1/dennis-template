@@ -1,5 +1,5 @@
 * Header:
-  * --------------- Top nav dropdown items should not line break.
+  * [Done] - Top nav dropdown items should not line break.
   * [Done] - Primary and top nav right side is not aligned with footer nav and content.
   * [Done] - Logos different sizes on Chrome, Safari and Firefox.
   * [Done] - Logo blinks when mobile nav is closed (mobile screen in desktop browser).
@@ -21,63 +21,50 @@
   * [Done] - Home page news tiles are not same height on firefox / safari.
   * [Done] - Home page news tiles different spacing between text and title on some tiles.
   * [Duplicate of item] Home page news tiles on phone screen the previous tile not visible when second is in focus.
-
 * Direct Investments page:
   * [Done] - Direct Investments page portfolio tiles increase "Go to Investment" bottom padding on mobile screens and top padding on small desktop.
-
-
 * Wealth Management page:
   * [Done] - Wealth Mgmt page equation blocks (explore boxes) less space to bottom "fixed" box.
   * [Done] - Wealth Mgmt page equation blocks disable scrolling and scrollbar during collapse.
-  * ---------- Wealth Mgmt page equation blocks on iOS text sizes wrong except first.
   * [Done] - Wealth Mgmt page equation blocks on iOS bottom box image is skewed.
-
 * Family Office page:
   * [Done] Family Office page disable tile scrolling and scrollbar during collapse.
-  * ----------- Family Office page tiles on iOS text too big.
-* ------------- Tiles on mobile not always full width of wrapper, need negative margin.
 * [Done - actually it's executed on load and resize whole time, what's the issue you're seeing?] - Dynamic tile sizing in JS is only executed on window resize, should also execute on window load.
 * [Done] - Hero image should be 500px including tablet and up.
 * [Done] - Team section should be 2 columns on phone screen, 3 on tablet, 4; 5 and 6 on desktop screens respectively.
 * [Done - they all have same width] - Tiles should all have same width on mobile screens.
 * [Done] - Fix bug where header and footer break at 960px but tiles break at 961px.
 * [Done] - On largest screen and up set the content padding (wrapper) to 80px.
-
-
-<!-- GENERAL, BOXES -->
-* Mobile tiles styles need to be more alike and smaller in general, ideally the next tiles text is slightly visible.
-  * Make all tiles content padding left and right 15px.
-  * Tile gutters on mobile should also be 15px.
-  * Home page service tiles image should be 250px on mobile.
-  * Double check that when swiped past the first tile it should be center aligned not left aligned (Ex.: Direct Investments page testimonial tiles on mobile).
-
-
 * [Done] - Nav dropdowns should have a slight fade in and fade out.
 * [Done] - Home page services tiles try out the same growing line animation as for nav items.
   * [Done] - They show at a certain scroll point.
   * [Done] - Make entry staggered from left to right.
+* [Done] - Added new portfolio detail page (pg. 3 and 9 for mobile).
+* [Done] - Nav decor lines not align on small desktop
+* [Done - tiles switch to slider on 959px, but they have desktop layout on 960px] - Tiles should have desktop display at top end of tablet screen?
+* [Done] - Home page service tiles image should be 250px on mobile.
+* [Done] - Double check that when swiped past the first tile it should be center aligned not left aligned (Ex.: Direct Investments page testimonial tiles on mobile).
 
+<!-- I think done? -->
+* Wealth Management page:
+  * [ All seem same to me? ] - Wealth Mgmt page equation blocks on iOS text sizes wrong except first.
+  * Family Office page:
+    * [Same as Chrome - if you want different size, provide me a value] - Family Office page tiles on iOS text too big.
+    * [When you set them to be full width of the wrapper, the side tiles (prev and next) are not visible. If I make them visible, tiles are not full wrapper width. Only one of these 2 options is possible at once] - Tiles on mobile not always full width of wrapper, need negative margin.
+* Mobile tiles styles need to be more alike and smaller in general, ideally the next tiles text is slightly visible.
+  * [Content really looks squished on some of the tiles if we set it to 15px; Rethink this] - Make all tiles content padding left and right 15px.
+  * [Contradictory !!! ] - Tile gutters on mobile should also be 15px.
+* [Not sure what this means and on which section] - Direct link team should focus member on center of screen, no style
 
-
-
-
-
-* [NEW PAGE] - Added new portfolio detail page (pg. 3 and 9 for mobile).
 
 <!-- TBD -->
 * Clear w/ designer:
   * New logo asset
   * Scroll to team member active style?
   * Infographic Asset?
-
 * Fine tune portfolio animation (snappier)
-* Tiles should have desktop display at top end of tablet screen?
 * Tablet screen tiles two per slide?
-* Nav decor lines not aligne on small desktop
-* Direct link team should focus member on center of screen, no style
 
-* Debriefing
-* Aufgleisung
 
 <!-- Dimensions -->
 * phone mobile screens, less than 700px

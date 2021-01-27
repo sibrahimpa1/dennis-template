@@ -24,6 +24,14 @@
     height: auto;
     outline: none !important;
     flex-direction: column;
+    @include media-below("lg") {
+      margin: 0 5px 0;
+    }
+    @include media-above("lg"){
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
   .slick-track {
     display: flex;

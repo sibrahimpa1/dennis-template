@@ -9,22 +9,30 @@
 
 	.slick-slide {
 		outline: none !important;
+    @include media-below("lg") {
+      margin: 0 5px 0;
+    }
+    @include media-above("lg"){
+      &:last-child {
+        margin: 0;
+      }
+    }
 	}
 }
 
 .expand-boxes__item{
   background-color: rgb(116 132 145 / 0.1);
-  margin: 0 $space-sm 0 0;
+  margin: 0 $space-sm 0;
   min-height: 400px;
   position: relative;
+  cursor: pointer;
   width: 100%;
   transition: $base-transition;
   @include media-above("lg"){
     max-width: calc(33.33% - 10px);
-  }
-  cursor: pointer;
-  &:last-child{
-    margin: 0;
+    &:last-child{
+      margin: 0;
+    }
   }
 }
 
