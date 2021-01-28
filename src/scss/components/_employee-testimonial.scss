@@ -18,6 +18,9 @@
     @include media-above("lg"){
       padding: $space-md $space-xl $space-md 0;
     }
+    @include media-below("md"){
+      padding: $space-xl $space-sm $space-md;
+    }
     h2{
       font-size: $text-lg;
       margin: 0 0 $space-bump;

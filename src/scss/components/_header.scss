@@ -320,9 +320,9 @@
 				left: $space-sm;
 				opacity: 0;
 				width: 0;
-				transition: all 0.5s ease;
+				transition: $base-transition;
 				@include media-above("xl") {
-					left: $space;
+					left: $space + 1;
 				}
 			}
 
@@ -372,5 +372,6 @@
 
 	&:before {
 		opacity: 1;
+		width: 35px;
 	}
 }

@@ -1,50 +1,6 @@
 .custom-slider{
   margin: $space-xl 0 0;
-  padding: $space-lg 0;
-}
-
-.custom-slider__title{
-  margin: 0 0 $space-xl*2;
-  color: $brand-primary;
-  margin: 0 0 $space-xl;
-  @include media-above("md"){
-    margin: 0 0 $space-xxl;
-  }
-  @include media-above("xxl"){
-    margin: 0 0 $space-xl*2;
-  }
-  span{
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: $text-sm;
-    @include media-above("md"){
-      font-size: $text-sm2;
-    }
-  }
-  h1{
-    font-weight: 100;
-    font-size: $text-xl;
-    position: relative;
-    padding: $space 0 $space-bump;
-    max-width: 250px;
-    @include media-above("sm"){
-      max-width: 50%;
-    }
-    @include media-above("md"){
-      font-size: $text-xxl;
-      max-width: 100%;
-    }
-    &:after {
-      content: "";
-      width: 30px;
-      height: 3px;
-      background-color: #00284A;
-      position: absolute;
-      bottom: $space-sm;
-      left: 0;
-    }
-  }
+  padding: $space 0;
 }
 
 .custom-slider__desktop{
@@ -78,18 +34,20 @@
     }
     &:before {
       content: "";
-      width: 30px;
       height: 3px;
       background-color: #00284A;
       position: absolute;
       bottom: $space-sm;
+      transition: $base-transition;
       left: 0;
       opacity: 0.3;
+      width: 0;
     }
     &.active{
       font-weight: 400;
       &:before {
         opacity: 1;
+        width: 30px;
       }
     }
     &:hover{
@@ -97,6 +55,7 @@
       color: $brand-primary;
       &:before {
         opacity: 1;
+        width: 30px;
       }
     }
   }

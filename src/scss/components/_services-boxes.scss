@@ -67,6 +67,17 @@
 				margin: 0;
 			}
 		}
+		&:hover{
+			.services__box-bottom span{
+				margin: -1*$space -5px 0 auto;
+				@include media-below("xxl"){
+					margin: -10px -7px 0 auto;
+				}
+				@include media-below("lg"){
+					margin: 0 -7px 0 auto;
+				}
+			}
+		}
 
 		img {
 			transition: $base-transition;
@@ -99,7 +110,9 @@
 	&__box-bottom {
 		padding: $space-bump;
 		transition: $base-transition;
-
+		flex: 1;
+    display: flex;
+    flex-direction: column;
 		& > * {
 			color: $brand-white;
 		}
@@ -128,7 +141,7 @@
 			padding: 0 0 $space-bump;
 			position: relative;
 			line-height: 1.4;
-
+			flex: 1;
 			&:after {
 				content: "";
 				height: 3px;
@@ -150,13 +163,14 @@
 		}
 
 		span {
-			font-size: $text-sm;
+			font-size: $text-xs - 1;
 			font-weight: 200;
 			text-transform: uppercase;
 			text-align: right;
 			display: block;
 			position: relative;
 			margin: -1*$space 0 0 auto;
+			transition: $base-transition;
 			@include media-below("xxl"){
 				margin: -10px 0 0 auto;
 			}
@@ -164,8 +178,8 @@
 				margin: 0px 0 0 auto;
 			}
 			svg {
-				width: 14px !important;
-				height: 14px;
+				width: 12px !important;
+		    height: 12px;
 				display: inline-block;
 				transition: $base-transition;
 				margin: 0 0 1px 7px;

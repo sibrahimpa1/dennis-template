@@ -1,0 +1,49 @@
+.basic-title {
+	padding: $space-lg 0 $space;
+
+	&__title {
+		margin: 0;
+		color: $brand-primary;
+		@include media-above("md") {
+      margin: 0;
+		}
+		@include media-above("xxl") {
+      margin: 0 0 $space-lg;
+		}
+
+		span {
+			letter-spacing: 2.2px;
+			text-transform: uppercase;
+			font-weight: 200;
+			font-size: $text-sm;
+			@include media-above("md") {
+				font-size: $text-sm2;
+			}
+		}
+
+		h1 {
+			font-weight: 100;
+			font-size: $text-xl;
+			position: relative;
+			padding: $space 0 $space-bump;
+			max-width: 250px;
+			@include media-above("sm") {
+				max-width: 50%;
+			}
+			@include media-above("md") {
+				font-size: $text-xxl;
+				max-width: 100%;
+			}
+
+			&:after {
+				content: "";
+				width: 30px;
+				height: 3px;
+				background-color: #00284A;
+				position: absolute;
+				bottom: $space-sm;
+				left: 0;
+			}
+		}
+	}
+}

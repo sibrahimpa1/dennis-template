@@ -66,7 +66,7 @@ $(document).ready(function(){
 				$(".custom-slider__desktop-nav a").removeClass("active");
 				$(this).addClass('active');
 				$(".custom-slider__desktop-content").hide();
-				$(".custom-slider__desktop-content").eq(clickedItem).fadeIn();
+				$(".custom-slider__desktop-content").eq(clickedItem).fadeIn(150);
 			});
 		},
 		dynamicCount(){
