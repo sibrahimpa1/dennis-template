@@ -150,6 +150,9 @@
       text-align: center;
       color: $brand-primary;
       margin: auto;
+      @include media-below("lg"){
+        right: -35px;
+      }
     }
     &:last-child{
       &:after{

@@ -1,116 +1,144 @@
-.expand-boxes{
-  padding: $space-lg 0;
+.expand-boxes {
+	padding: $space-lg 0;
 }
 
-.expand-boxes__wrap{
-  .slick-list {
+.expand-boxes__wrap {
+	@include media-above("lg"){
+		margin: 0 -10px;
+	}
+	.slick-list {
 		padding: 0 !important;
+	}
+
+	.slick-track {
+		display: flex;
 	}
 
 	.slick-slide {
 		outline: none !important;
-    @include media-below("lg") {
-      margin: 0 5px 0;
-    }
-    @include media-above("lg"){
-      &:last-child {
-        margin: 0;
-      }
-    }
+		@include media-below("lg") {
+			margin: 0 $space-xs;
+
+			&:first-child {
+				margin: 0 $space-xs 0 0;
+			}
+		}
+		@include media-above("lg") {
+			&:last-child {
+				margin: 0;
+			}
+		}
 	}
 }
 
-.expand-boxes__item{
-  background-color: rgb(116 132 145 / 0.1);
-  margin: 0 $space-sm 0;
-  min-height: 400px;
-  position: relative;
-  cursor: pointer;
-  width: 100%;
-  transition: $base-transition;
-  @include media-above("lg"){
-    max-width: calc(33.33% - 10px);
-    &:last-child{
-      margin: 0;
-    }
-  }
+.expand-boxes__item {
+	background-color: rgb(116 132 145 / 0.1);
+	min-height: 400px;
+	position: relative;
+	cursor: pointer;
+	width: 100%;
+	transition: $base-transition;
+	@include media-above("lg") {
+		margin: 0 $space-sm;
+		max-width: calc(33.33% - 10px);
+	}
 }
 
-.expand-boxes__item-content{
-  position: absolute;
-  padding: $space-md $space-bump;
-  color: $brand-primary;
-  width: 100%;
-  left: 0;
-  height: 100%;
-  right: 0;
-  h2{
-    font-weight: 400;
-    transition: $base-transition;
-    font-size: $text-md;
-    margin: 0 0 $space;
-    @include media-above("lg"){
-      max-width: 70%;
-    }
-  }
-  p{
-    font-weight: 200;
-    transition: $base-transition;
-    height: 0;
-    overflow: hidden;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  div{
-    font-size: $text-sm;
-    text-transform: uppercase;
-    transition: $base-transition;
-    font-weight: 300;
-    margin: 0 0 $space-lg;
-    svg{
-      margin: 0 $space-sm 0 0;
-    }
-  }
+.expand-boxes__item-content {
+	position: absolute;
+	padding: $space-md $space-bump;
+	color: $brand-primary;
+	width: 100%;
+	left: 0;
+	height: 100%;
+	right: 0;
+	@include media-below("md") {
+		padding: $space $space $space-bump;
+	}
+
+	h2 {
+		font-weight: 400;
+		transition: $base-transition;
+		font-size: $text-md;
+		margin: 0 0 $space;
+		@include media-above("lg") {
+			max-width: 70%;
+		}
+		@include media-below("md") {
+			font-size: $text-md - 2;
+		}
+	}
+
+	p {
+		font-weight: 200;
+		transition: $base-transition;
+		height: 0;
+		overflow: hidden;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	div {
+		font-size: $text-sm;
+		text-transform: uppercase;
+		transition: $base-transition;
+		font-weight: 300;
+		margin: 0 0 $space-lg;
+
+		svg {
+			margin: 0 $space-sm 0 0;
+		}
+	}
 }
 
-.expand-boxes__item{
-  @include media-above("lg"){
-    &.active{
-      background-color: rgb(116 132 145);
-      .expand-boxes__item-content > *{
-        color: $brand-white;
-      }
-      .expand-boxes__item-content{
-        p{
-          margin: 0 0 $space;
-          height: 100%;
-        }
-        svg{
-          transform: rotate(180deg);
-        }
-        div{
-          margin: 0;
-        }
-      }
-    }
-  }
-  &.slick-slide{
-    .expand-boxes__item-content{
-      bottom: 0;
-      div{
-        display: none;
-      }
-      p{
-        margin: 0 0 $space;
-        height: auto;
-      }
-    }
-  }
-  &.slick-current{
-    background-color: rgb(116 132 145);
-    .expand-boxes__item-content > *{
-      color: $brand-white;
-    }
-  }
+.expand-boxes__item {
+	@include media-above("lg") {
+		&.active {
+			background-color: rgb(116 132 145);
+
+			.expand-boxes__item-content > * {
+				color: $brand-white;
+			}
+
+			.expand-boxes__item-content {
+				p {
+					margin: 0 0 $space;
+					height: 100%;
+				}
+
+				svg {
+					transform: rotate(180deg);
+				}
+
+				div {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&.slick-slide {
+		.expand-boxes__item-content {
+			bottom: 0;
+
+			div {
+				display: none;
+			}
+
+			p {
+				margin: 0 0 $space;
+				height: auto;
+			}
+		}
+	}
+
+	&.slick-current {
+		background-color: rgb(116 132 145);
+
+		.expand-boxes__item-content > * {
+			color: $brand-white;
+		}
+	}
 }

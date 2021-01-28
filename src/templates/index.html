@@ -13,7 +13,7 @@
 <body>
 	<header class="header header--static js-header u-flex">
 		<div class="wrapper">
-			<div class="header__inner u-flex u-flex-jsb u-flex-ac">
+			<div class="header__inner u-flex u-flex-jsb u-flex-ac" data-sal="fade" data-sal-duration="500" data-sal-delay="100" data-sal-easing="ease-out">
 				<a href="/" class="logo">
 					<img src="../images/content/logo.svg" alt="Logo" />
 				</a>
@@ -134,13 +134,14 @@
 
 	<div class="content">
 		<section class="hero">
-			<div class="hero__bg-image">
+			<div class="hero__bg-image" data-sal="fade" data-sal-duration="800" data-sal-delay="0" data-sal-easing="ease-out">
 				<img src="../images/content/winter.jpg" alt="">
 			</div>
 			<div class="wrapper">
-				<div class="hero__box hero__box--blue u-flex u-flex-column u-flex-jfe">
+				<div class="hero__box hero__box--green u-flex u-flex-column u-flex-jfe" data-sal="fade" data-sal-duration="400" data-sal-delay="900" data-sal-easing="ease-out">
 					<span>Lorem ipsum</span>
 					<h1>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed</h1>
+					<div class="hero__line" data-sal="fade" data-sal-duration="800" data-sal-delay="1000" data-sal-easing="ease-out"></div>
 				</div>
 			</div>
 		</section>
@@ -188,51 +189,75 @@
 				<h1 class="block-title">News</h1>
 				<div class="news__boxes">
 					<div class="js-news grid">
-						<div class="top-wrap">
-							<a href="#" class="grid__box first">
-								<img src="../images/content/winter.jpg" alt="News Title">
-								<div class="grid__box-content">
-									<span>31.03.2020</span>
-									<h2>Lorem ipsum dolor sit amet, consetetur.</h2>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.</p>
-									<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
-								</div>
-							</a>
-						</div>
-						<div class="double-wrap u-flex u-flex-column">
-							<a href="#" class="grid__box third">
-								<div class="grid__box-content">
-									<span>31.03.2020</span>
-									<h2>Lorem ipsum dolor sit amet, consetetur.</h2>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-										rebum. Stet clita kasd gubergren.</p>
-									<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
-								</div>
-							</a>
-							<a href="#" class="grid__box forth">
-								<div class="grid__box-content">
-									<span>31.03.2020</span>
-									<h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h2>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-										rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
-									<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
-								</div>
-							</a>
-						</div>
-						<div class="bottom-wrap">
-							<a href="#" class="grid__box second">
-								<div class="grid__box-content grid__box-content--no-img">
-									<span>31.03.2020</span>
-									<h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</h2>
-									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-										rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-										magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-										magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-										consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea</p>
-									<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
-								</div>
-							</a>
-						</div>
+
+
+						<a href="#" class="grid__box">
+							<img src="../images/content/winter.jpg" alt="News Title">
+							<div class="grid__box-content">
+								<span>31.03.2020</span>
+								<h2>Lorem ipsum dolor sit amet, consetetur.</h2>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et.</p>
+								<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
+							</div>
+						</a>
+
+						<a href="#" class="grid__box">
+							<div class="grid__box-content grid__box-content--no-img">
+								<span>31.03.2020</span>
+								<h2>Lorem ipsum dolor sit amet, consetetur.</h2>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+									justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr.</p>
+								<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
+							</div>
+						</a>
+
+
+						<a href="#" class="grid__box">
+							<div class="grid__box-content grid__box-content--no-img">
+								<span>31.03.2020</span>
+								<h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h2>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+									justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr.</p>
+								<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
+							</div>
+						</a>
+
+
+						<a href="#" class="grid__box">
+							<div class="grid__box-content grid__box-content--no-img">
+								<span>31.03.2020</span>
+								<h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</h2>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+									rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+									magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+									consetetur sadipscing elitr.</p>
+								<div class="see-more">Weiterlesen<i class="fa fa-chevron-right"></i></div>
+							</div>
+						</a>
+
+
 					</div>
 				</div>
 			</div>

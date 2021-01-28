@@ -3,29 +3,30 @@
 
 	&__boxes {
 		.slick-track {
+			overflow: auto;
 			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
 		}
 
-		.slick-list {
-			padding: 0 !important;
-		}
-
-		.slick-track {
-			display: flex;
+		.slick-track:after,
+		.slick-track:before {
+			display: none;
 		}
 
 		.slick-slide {
-			margin: 0 $space 0 0;
 			display: flex;
 			height: auto;
 			outline: none !important;
-			@include media-below("lg") {
-				margin: 0 $space-sm 0 0;
+			@include media-below("md") {
+				margin: 0 $space-xs 0;
+				&:first-child{
+					margin: 0 $space-xs 0 0;
+				}
 			}
-			&:last-child {
-				margin: 0;
+			@include media-above("md") {
+				margin: 0 $space 0 0;
+				&:last-child {
+					margin: 0;
+				}
 			}
 			@include media-below("lg") {
 				img {
@@ -67,13 +68,14 @@
 				margin: 0;
 			}
 		}
-		&:hover{
-			.services__box-bottom span{
+
+		&:hover {
+			.services__box-bottom span {
 				margin: -1*$space -5px 0 auto;
-				@include media-below("xxl"){
+				@include media-below("xxl") {
 					margin: -10px -7px 0 auto;
 				}
-				@include media-below("lg"){
+				@include media-below("lg") {
 					margin: 0 -7px 0 auto;
 				}
 			}
@@ -111,8 +113,12 @@
 		padding: $space-bump;
 		transition: $base-transition;
 		flex: 1;
-    display: flex;
-    flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		@include media-below("md") {
+			padding: $space $space $space-bump;
+		}
+
 		& > * {
 			color: $brand-white;
 		}
@@ -132,6 +138,9 @@
 		h2 {
 			font-size: $text-lg;
 			margin: 0 0 $space-sm;
+			@include media-below("md") {
+				font-size: $text-md;
+			}
 		}
 
 		p {
@@ -142,6 +151,10 @@
 			position: relative;
 			line-height: 1.4;
 			flex: 1;
+			@include media-below("md") {
+				font-size: $text-xs;
+			}
+
 			&:after {
 				content: "";
 				height: 3px;
@@ -154,8 +167,8 @@
 				transition: $base-transition;
 			}
 
-			&.visible{
-				&:after{
+			&.visible {
+				&:after {
 					width: 35px;
 					opacity: 1;
 				}
@@ -171,15 +184,19 @@
 			position: relative;
 			margin: -1*$space 0 0 auto;
 			transition: $base-transition;
-			@include media-below("xxl"){
+			@include media-below("xxl") {
 				margin: -10px 0 0 auto;
 			}
-			@include media-below("lg"){
-				margin: 0px 0 0 auto;
+			@include media-below("lg") {
+				margin: 0 0 0 auto;
 			}
+			@include media-below("md") {
+				font-size: $text-xs - 1;
+			}
+
 			svg {
 				width: 12px !important;
-		    height: 12px;
+				height: 12px;
 				display: inline-block;
 				transition: $base-transition;
 				margin: 0 0 1px 7px;

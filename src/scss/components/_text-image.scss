@@ -67,4 +67,7 @@
   svg{
     font-size: 24px;
   }
+  @include media-below("lg"){
+    top: -35px;
+  }
 }

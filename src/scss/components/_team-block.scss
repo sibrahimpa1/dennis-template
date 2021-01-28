@@ -1,21 +1,25 @@
 .team{
   padding: $space-lg 0;
+  &__elements{
+    margin: 0 -5px;
+  }
   &__member{
     color: $brand-primary;
-    margin: 0 1% $space-md 0;
+    margin: 0 $space-xs $space-md;
     position: relative;
-    flex-basis: 49%;
+    width: calc(50% - 10px);
     @include media-above("md"){
-      flex-basis: 32%;
+      width: calc(33.33% - 10px);
     }
     @include media-above("lg"){
-      flex-basis: 24%;
+      width: calc(25% - 10px);
     }
     @include media-above("xxl"){
-      flex-basis: 19%;
+      width: calc(20% - 10px);
     }
     @include media-above("xxxl"){
-      flex-basis: 15.6%;
+      width: calc(16.66% - 10px);
+
     }
     h2{
       font-size: $text-md - 2;

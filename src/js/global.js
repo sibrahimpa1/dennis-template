@@ -1,14 +1,18 @@
 import $ from 'jquery';
 import Headroom from './headroom/headroom.js';
 import './slick/slick.js';
-import { CountUp } from 'countup.js';
+import sal from 'sal.js';
+import {
+	CountUp
+} from 'countup.js';
 
-$(document).ready(function(){
+$(document).ready(function() {
 	const GlobalScripts = {
 		init() {
-	    this.cache();
-	    this.events();
+			this.cache();
+			this.events();
 			this.initHeadroom();
+			this.initSal();
 			this.navigationActiveLinks();
 			this.hoverStates();
 			this.mobileSliders();
@@ -18,50 +22,55 @@ $(document).ready(function(){
 			this.servicesOnScrollLine();
 			this.heroSlider();
 		},
-	  cache() {
-	    this.$doc = $(document);
-	    this.$win = $(window);
-	    this.$html = $('html');
-	    this.$body = $('body');
-	    this.$htmlBody = $('html,body');
-	    this.$mainWrap = $('main');
-	    this.$mobileNav = $('.js-nav-mobile');
-	    this.$hamburgerNav = $('.js-nav-hamburger');
-	    this.$hamburger = $('.js-hamburger');
-	  },
+		cache() {
+			this.$doc = $(document);
+			this.$win = $(window);
+			this.$html = $('html');
+			this.$body = $('body');
+			this.$htmlBody = $('html,body');
+			this.$mainWrap = $('main');
+			this.$mobileNav = $('.js-nav-mobile');
+			this.$hamburgerNav = $('.js-nav-hamburger');
+			this.$hamburger = $('.js-hamburger');
+		},
 		events() {
 			this.$doc.on('click', '.js-nav-hamburger', event => this.showMobileNav(event));
 			this.$doc.on('click', '.js-share', event => this.openShareWindow(event));
 		},
-		navigationActiveLinks(){
+		initSal() {
+			sal({
+				threshold: 0.1
+			});
+		},
+		navigationActiveLinks() {
 			// this is only temporary active link state for now - should be reviewed once backend is done
 			var pathname = window.location.pathname;
-			$(".header__desktop a").each(function(){
-			  if(~pathname.indexOf($(this).attr('href'))){
+			$(".header__desktop a").each(function() {
+				if (~pathname.indexOf($(this).attr('href'))) {
 					$(this).addClass("active");
 					return;
 				}
 			});
 		},
-		servicesOnScrollLine(){
-			if($(".services__box-bottom").length){
+		servicesOnScrollLine() {
+			if ($(".services__box-bottom").length) {
 				$(window).scroll(function() {
-						var top_of_element = $(".services__box-bottom span").offset().top;
-						var elementsHeight = $(".services__box-bottom span").outerHeight();
-						var bottom_of_element = $(".services__box-bottom span").offset().top + $(".services__box-bottom span").outerHeight();
-						var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-						var top_of_screen = $(window).scrollTop();
+					var top_of_element = $(".services__box-bottom span").offset().top;
+					var elementsHeight = $(".services__box-bottom span").outerHeight();
+					var bottom_of_element = $(".services__box-bottom span").offset().top + $(".services__box-bottom span").outerHeight();
+					var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+					var top_of_screen = $(window).scrollTop();
 
-						if ((bottom_of_screen > top_of_element + 100) && (top_of_screen < bottom_of_element)){
-							console.log('visible');
-								$(".services__box-bottom p").addClass('visible');
-						}
+					if ((bottom_of_screen > top_of_element + 100) && (top_of_screen < bottom_of_element)) {
+						console.log('visible');
+						$(".services__box-bottom p").addClass('visible');
+					}
 				});
 			}
 		},
-		customSliderNav(){
+		customSliderNav() {
 			$(".custom-slider__desktop-content").eq(0).show();
-			$(".custom-slider__desktop-nav a").on('click', function(){
+			$(".custom-slider__desktop-nav a").on('click', function() {
 				var clickedItem = $(this).index();
 				$(".custom-slider__desktop-nav a").removeClass("active");
 				$(this).addClass('active');
@@ -69,32 +78,32 @@ $(document).ready(function(){
 				$(".custom-slider__desktop-content").eq(clickedItem).fadeIn(150);
 			});
 		},
-		dynamicCount(){
-			if($(".dynamic-count").length){
+		dynamicCount() {
+			if ($(".dynamic-count").length) {
 				var animated = false;
-				const easingFn = function (t, b, c, d) {
-				  var ts = (t /= d) * t;
-				  var tc = ts * t;
-				  return b + c * (tc * ts + -5 * ts * ts + 10 * tc + -10 * ts + 5 * t);
-			  }
+				const easingFn = function(t, b, c, d) {
+					var ts = (t /= d) * t;
+					var tc = ts * t;
+					return b + c * (tc * ts + -5 * ts * ts + 10 * tc + -10 * ts + 5 * t);
+				}
 				const runAnimations = () => {
 					const options1 = {
-					  duration: 6,
-				 	  easingFn,
+						duration: 6,
+						easingFn,
 					};
 					const options2 = {
-					  duration: 5,
-				 	  easingFn,
+						duration: 5,
+						easingFn,
 					};
 					const options3 = {
-					  duration: 4,
-				  	prefix: '> ',
-					  easingFn,
+						duration: 4,
+						prefix: '> ',
+						easingFn,
 					};
 					const options4 = {
-					  duration: 3,
+						duration: 3,
 						prefix: '~ ',
-					  easingFn,
+						easingFn,
 					};
 					var countUp1 = new CountUp('count1', 11, options1);
 					var countUp2 = new CountUp('count2', 189, options2);
@@ -108,37 +117,37 @@ $(document).ready(function(){
 				$(window).on('scroll', function() {
 					var scrollTop = $(this).scrollTop();
 					var topDistance = $(".dynamic-count").offset().top;
-					if ( (topDistance - 200) < scrollTop ) {
-						if(!animated) runAnimations();
+					if ((topDistance - 200) < scrollTop) {
+						if (!animated) runAnimations();
 						animated = true;
 					}
 				});
 			}
 		},
-		expandStaticBox(){
+		expandStaticBox() {
 			$(document).on({
-				mouseenter: function () {
+				mouseenter: function() {
 					$(this).addClass("active");
 					$(this).find("span").text("WENIGER")
 				},
-				mouseleave: function () {
+				mouseleave: function() {
 					$(this).find("span").text("Mehr")
 					$(this).removeClass("active");
 				}
 			}, '.expand-boxes__item');
 
 			$(document).on({
-				mouseenter: function () {
+				mouseenter: function() {
 					$(this).addClass("active");
 					$(this).find("span").text("WENIGER")
 				},
-				mouseleave: function () {
+				mouseleave: function() {
 					$(this).find("span").text("Mehr")
 					$(this).removeClass("active");
 				}
 			}, '.explore-boxes__item--dynamic');
 		},
-		heroSlider(){
+		heroSlider() {
 			var heroSlider = $('.js-hero-slider');
 			var heroSliderSettings = {
 				dots: true,
@@ -148,140 +157,36 @@ $(document).ready(function(){
 				infinite: true,
 				autoplay: true,
 				fade: true,
-			  cssEase: 'linear',
+				cssEase: 'linear',
 				autoplaySpeed: 3000
 			}
-			if($('.js-hero-slider').length) heroSlider.slick(heroSliderSettings);
+			if ($('.js-hero-slider').length) heroSlider.slick(heroSliderSettings);
 		},
-		mobileSliders(){
-			// services slider
+		mobileSliders() {
+
+			var globalSettings = {
+				centerMode: true,
+				arrows: false,
+				buttons: false,
+				dots: false,
+				infinite: false,
+				centerPadding: '0px',
+				slidesToScroll: 1,
+				slidesToShow: 1,
+				speed: 500,
+				variableWidth: false,
+				initialSlide: 0,
+			}
+
 			var servicesSlider = $('.js-services');
-			var servicesSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 700,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				},
-				{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
-
-			// news slider
 			var newsSlider = $('.js-news');
-			var newsSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 700,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				},
-				{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
-
-			// family expand boxes slider
 			var expandBoxesSlider = $('.js-expand-boxes');
-			var expandBoxesSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true
-			}
-
-			// wealth management - explore boxes
 			var exploreBoxesSlider = $('.js-explore-boxes');
-			var exploreBoxesSliderSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
-
-			// direct investments - portfolio slider
 			var customSlider = $('.js-custom-slider');
-			var customSliderSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
-
-			// direct investments - portfolio slider
 			var portfolioSlider = $('.js-portfolio-items');
-			var portfolioSliderSettings = {
-				dots: false,
-				arrows: false,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				autoplay: false,
-				centerMode: true,
-				responsive: [{
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}]
-			}
 
-			slick_on_mobile( portfolioSlider, portfolioSliderSettings);
-			slick_on_mobile( exploreBoxesSlider, exploreBoxesSliderSettings);
-			slick_on_mobile( customSlider, customSliderSettings);
-			slick_on_mobile( expandBoxesSlider, expandBoxesSettings);
-			slick_on_mobile( newsSlider, newsSettings);
-			slick_on_mobile( servicesSlider, servicesSettings);
-
-	  	// slick on mobile
-			function slick_on_mobile(slider, settings){
+			// slick on mobile
+			function slick_on_mobile(slider, settings) {
 				if ($(window).width() < 960) {
 					if (!slider.hasClass('slick-initialized')) {
 						return slider.slick(settings);
@@ -294,66 +199,70 @@ $(document).ready(function(){
 						}
 						return;
 					}
-					if (!slider.hasClass('slick-initialized')) {
+					if (!slider.hasClass('slick-initialized') && $(window).width() < 960) {
 						return slider.slick(settings);
 					}
 				});
-
 			};
+
+			slick_on_mobile(portfolioSlider, globalSettings);
+			slick_on_mobile(exploreBoxesSlider, globalSettings);
+			slick_on_mobile(customSlider, globalSettings);
+			slick_on_mobile(expandBoxesSlider, globalSettings);
+			slick_on_mobile(newsSlider, globalSettings);
+			slick_on_mobile(servicesSlider, globalSettings);
 
 			$(window).on('load resize', function() {
 				if ($(window).width() >= 960) {
 					$(".portfolio__box--dynamic").removeClass("clicked");
 					$(".portfolio__box--dynamic").unbind(addDoubleTap());
-				}
-				else{
+				} else {
 					$(".portfolio__box--dynamic").bind(addDoubleTap());
 				}
 			});
 
 			var addDoubleTap = () => {
-				$(".portfolio__box--dynamic").on('click', function(e){
-					if(!$(this).hasClass("clicked")){
+				$(".portfolio__box--dynamic").on('click', function(e) {
+					if (!$(this).hasClass("clicked")) {
 						e.preventDefault();
 						$(".portfolio__box--dynamic").removeClass("clicked");
 						$(this).addClass("clicked");
-					}
-					else if($(this).hasClass("clicked")){
+					} else if ($(this).hasClass("clicked")) {
 						// console.log('go for it');
 					}
 				});
 			}
 
 		},
-		hoverStates(){
+		hoverStates() {
 			// services boxes
 			$(document).on({
-		    mouseenter: function () {
+				mouseenter: function() {
 					$(".services__box .services__box-bottom").css('opacity', 0.6);
 					$(".services__box img").css('opacity', 0.35);
 					$(this).addClass('services__box--focus');
-		    },
-		    mouseleave: function () {
+				},
+				mouseleave: function() {
 					$(".services__box").removeClass('services__box--focus');
 					$(".services__box .services__box-bottom").css('opacity', 1);
 					$(".services__box img").css('opacity', 1);
-		    }
+				}
 			}, '.services__box');
 		},
 		initHeadroom() {
-			$(".js-header").on('mouseover', function(){
+			$(".js-header").on('mouseover', function() {
 				$(this).addClass('headroom--pinned').removeClass('headroom--unpinned headroom--not-top');
 			});
-	    let theHeader = document.querySelector('.js-header');
-	    let headroom = new Headroom(theHeader, {
-			  "offset": 90,
-				"tolerance" : {
-	        down : 0,
-	        up : 10
-		    },
+			let theHeader = document.querySelector('.js-header');
+			let headroom = new Headroom(theHeader, {
+				"offset": 90,
+				"tolerance": {
+					down: 0,
+					up: 10
+				},
 			});
-	    headroom.init();
-	  },
+			headroom.init();
+		},
 		showMobileNav(event) {
 			event.preventDefault();
 			this.$mobileNav.toggleClass('is-active');
