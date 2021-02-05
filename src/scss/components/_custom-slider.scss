@@ -14,7 +14,6 @@
 
 .custom-slider__desktop-nav {
 	padding: 0 $space-xl 0 0;
-
 	a {
 		font-weight: 200;
 		text-transform: uppercase;
@@ -24,7 +23,7 @@
 		font-size: $text-sm;
 		display: flex;
 		flex-direction: column;
-
+    min-width: 200px;
 		&:after {
 			content: attr(data-text);
 			content: attr(data-text)/"";
@@ -71,7 +70,7 @@
 
 .custom-slider__desktop-content {
 	display: none;
-
+  width: 100%;
 	.author-text {
 		flex: 1;
 		margin: $space-lg 0 0;
@@ -166,7 +165,7 @@
 .custom-slider__mobile-content {
 	background-color: rgb(146 163 149 / 0.13);
 	margin: 0 $space 0 0;
-  @include media-below("md") {
+  @include media-below("lg") {
     padding: $space $space $space-bump;
   }
 	@include media-above("lg") {

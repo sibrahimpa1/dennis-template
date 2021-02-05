@@ -17,7 +17,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  margin: $space-lg auto;
+  margin: $space-md auto;
   background-color: $brand-green-shade;
   color: $brand-white;
   padding: $space-lg $space-bump;
@@ -34,11 +34,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: $space-xs 0;
   p{
     font-size: $text-sm;
     font-weight: 200;
     position: relative;
-    padding: 0 0 $space;
+    padding: 0 0 $space - 5;
     &:after{
       content: "";
       height: 2px;

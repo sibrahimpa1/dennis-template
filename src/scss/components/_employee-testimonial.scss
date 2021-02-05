@@ -15,6 +15,7 @@
   &__content{
     padding: $space-xl 0 $space-md;
     max-width: 80%;
+    width: 100%;
     @include media-above("lg"){
       padding: $space-md $space-xl $space-md 0;
     }

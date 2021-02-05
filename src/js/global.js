@@ -105,14 +105,28 @@ $(document).ready(function() {
 						prefix: '~ ',
 						easingFn,
 					};
+					const options5 = {
+						duration: 2,
+						prefix: '~ ',
+						easingFn,
+					};
+					const options6 = {
+						duration: 2,
+						prefix: '~ ',
+						easingFn,
+					};
 					var countUp1 = new CountUp('count1', 11, options1);
 					var countUp2 = new CountUp('count2', 189, options2);
 					var countUp3 = new CountUp('count3', 456, options3);
 					var countUp4 = new CountUp('count4', 10000, options4);
+					var countUp5 = new CountUp('count5', 8234, options3);
+					var countUp6 = new CountUp('count6', 1442, options4);
 					countUp1.start();
 					countUp2.start();
 					countUp3.start();
 					countUp4.start();
+					countUp5.start();
+					countUp6.start();
 				};
 				$(window).on('scroll', function() {
 					var scrollTop = $(this).scrollTop();
@@ -215,23 +229,17 @@ $(document).ready(function() {
 			$(window).on('load resize', function() {
 				if ($(window).width() >= 960) {
 					$(".portfolio__box--dynamic").removeClass("clicked");
-					$(".portfolio__box--dynamic").unbind(addDoubleTap());
-				} else {
-					$(".portfolio__box--dynamic").bind(addDoubleTap());
 				}
 			});
 
-			var addDoubleTap = () => {
-				$(".portfolio__box--dynamic").on('click', function(e) {
-					if (!$(this).hasClass("clicked")) {
-						e.preventDefault();
-						$(".portfolio__box--dynamic").removeClass("clicked");
-						$(this).addClass("clicked");
-					} else if ($(this).hasClass("clicked")) {
-						// console.log('go for it');
-					}
-				});
-			}
+
+			$('.js-portfolio-items').on('swipe', function(event, slick, direction){
+			  console.log(direction);
+				setTimeout(function(){
+					$(".portfolio__box--dynamic").removeClass("clicked");
+					$(".portfolio__box--dynamic.slick-current").addClass("clicked");
+				},300);
+			});
 
 		},
 		hoverStates() {

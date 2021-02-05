@@ -87,17 +87,18 @@
   h5{
     font-size: $text-sm;
     font-weight: 300;
+    margin: 0 0 $space;
   }
   p{
     font-weight: 200;
     font-size: $text-sm;
     line-height: 1.6;
-    margin: $space 0 0;
+    margin: $space-sm 0 0;
     @include media-above("sm"){
       font-size: $text-sm2;
     }
     @include media-above("lg"){
-      margin: $space-md 0 0;
+      margin: $space-sm 0 0;
     }
   }
   div{
@@ -112,8 +113,8 @@
       &:hover{
         color: #0e4a7d;
       }
-      &:last-child{
-        margin: 0 0 0 $space;
+      &:nth-child(2){
+        margin: 0 $space 0 0;
       }
       svg{
         width: 20px !important;
