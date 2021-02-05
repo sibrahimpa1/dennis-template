@@ -321,7 +321,10 @@
 				opacity: 0;
 				width: 0;
 				transition: $base-transition;
-				@include media-above("xl") {
+				@include media-above("lg") {
+					left: 11;
+				}
+				@include media-above("xxl") {
 					left: $space + 1;
 				}
 			}

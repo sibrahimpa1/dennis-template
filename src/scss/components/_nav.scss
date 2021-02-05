@@ -26,6 +26,16 @@
 	transition: transform 0.3s ease-in-out;
 	overflow: auto;
 
+	&:before {
+		content: "";
+		background-color: white;
+		height: 80px;
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: absolute;
+	}
+
 	&.is-active {
 		transform: translateX(0);
 		pointer-events: all;
@@ -36,11 +46,12 @@
 
 	.header__list {
 		margin: $space-md 0 0;
+		width: 100%;
 
 		&__item {
-			font-size: $text-md;
-			font-weight: 200;
-			margin: 0 0 $space-md;
+			font-size: $text-base + 2;
+			font-weight: 300;
+			margin: 0 0 $space-bump;
 
 			&:last-child {
 				margin: 0;
@@ -56,19 +67,24 @@
 
 	.header__nav-dropdown {
 		text-align: right;
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		width: 100%;
+
 		.header__dropdown {
 			width: 100%;
 			opacity: 1;
 			position: relative;
 			z-index: 2000;
-			padding: 0;
+			padding: 20px 30px 0;
 			pointer-events: all;
 			top: 0;
 			margin: $space-bump 0 0;
 			display: none;
+			background-color: white;
+			width: calc(100% + 60px);
+			margin: 20px -30px !important;
 
 			h2 {
 				margin: 0 0 $space-xs*3;
@@ -124,6 +140,89 @@
 				z-index: 1000;
 				pointer-events: all;
 			}
+		}
+	}
+}
+
+.nav--mobile {
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 100%;
+	}
+}
+
+.nav--mobile__bottom {
+	display: flex;
+	flex-direction: column;
+	padding: 0 0 $space;
+	width: 100%;
+
+	.header__list--top {
+		width: 100%;
+		align-items: center;
+		margin: 0 0 $space;
+
+		a {
+			margin: 0;
+			font-size: $text-sm2;
+		}
+
+		.header__list-lang {
+			margin: 0 $space-md 0 0;
+    	padding: 20px 0 0;
+			a {
+				margin: 0 $space-sm 0 0;
+				padding: 0 $space-sm 0 0;
+				border-right: 1px solid #00284A;
+
+				&:last-child {
+					border: 0;
+				}
+			}
+		}
+
+		.header__nav-dropdown {
+			font-size: $text-sm2;
+			font-weight: 400;
+	    position: unset;
+	    padding: 20px 0 0;
+			svg {
+				margin: 1px 0 0 8px;
+			}
+		}
+
+		.header__nav-dropdown .header__dropdown {
+			position: absolute;
+			right: 0;
+			left: auto;
+			width: 100%;
+			top: auto;
+			bottom: 90px;
+			margin: 0 !important;
+			h2{
+		    font-size: $text-base;
+			}
+			ul{
+				a{
+					margin: 0;
+			    padding: 7px 0;
+			    border: 0;
+			    text-align: left;
+			    display: block;
+				}
+			}
+		}
+	}
+
+	.header__list--bottom {
+		width: 100%;
+
+		a {
+			margin: 0 30px 0 0;
+			font-weight: 400;
+			font-size: $text-sm2;
 		}
 	}
 }
