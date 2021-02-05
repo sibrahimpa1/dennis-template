@@ -1,0 +1,65 @@
+.infographic-section {
+	&__desktop {
+		@include media-below("lg") {
+			display: none;
+		}
+
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__mobile {
+		@include media-above("lg") {
+			display: none;
+		}
+
+		svg {
+			width: 100%;
+			height: auto;
+
+			text {
+				cursor: pointer;
+				opacity: 0.454;
+
+				&.visible {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__mobile-texts {
+		margin: $space-md 0 0;
+		min-height: 150px;
+		position: relative;
+
+		div {
+			opacity: 0;
+			height: 0;
+			top: 0;
+
+			&.active {
+				opacity: 1;
+				transition: $base-transition;
+				height: auto;
+			}
+
+			h1 {
+				color: #a59e86;
+				font-size: $text-base;
+				font-weight: bold;
+				line-height: 1.4;
+				margin: 0 0 $space-sm;
+			}
+
+			p {
+				font-size: $text-sm;
+				color: $brand-primary;
+				line-height: 1.5;
+				font-weight: 300;
+			}
+		}
+	}
+}

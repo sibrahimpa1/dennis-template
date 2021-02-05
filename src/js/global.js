@@ -21,6 +21,7 @@ $(document).ready(function() {
 			this.customSliderNav();
 			this.servicesOnScrollLine();
 			this.heroSlider();
+			this.wealthManagementInfographic();
 		},
 		cache() {
 			this.$doc = $(document);
@@ -40,6 +41,17 @@ $(document).ready(function() {
 		initSal() {
 			sal({
 				threshold: 0.1
+			});
+		},
+		wealthManagementInfographic(){
+			$("svg text").on('click', function(){
+				$(".circle-text").removeClass("active");
+				$("svg text").removeClass('visible');
+
+				var itemId = $(this).attr('id');
+				$(this).addClass('visible');
+
+				$("."+itemId).addClass("active")
 			});
 		},
 		navigationActiveLinks() {
