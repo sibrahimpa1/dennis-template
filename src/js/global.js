@@ -43,15 +43,15 @@ $(document).ready(function() {
 				threshold: 0.1
 			});
 		},
-		wealthManagementInfographic(){
-			$("svg text").on('click', function(){
+		wealthManagementInfographic() {
+			$("svg text").on('click', function() {
 				$(".circle-text").removeClass("active");
 				$("svg text").removeClass('visible');
 
 				var itemId = $(this).attr('id');
 				$(this).addClass('visible');
 
-				$("."+itemId).addClass("active")
+				$("." + itemId).addClass("active")
 			});
 		},
 		navigationActiveLinks() {
@@ -241,17 +241,23 @@ $(document).ready(function() {
 			$(window).on('load resize', function() {
 				if ($(window).width() >= 960) {
 					$(".portfolio__box--dynamic").removeClass("clicked");
+					$(".portfolio__box--dynamic").unbind(addDoubleTap());
+				} else {
+					$(".portfolio__box--dynamic").bind(addDoubleTap());
 				}
 			});
 
-
-			$('.js-portfolio-items').on('swipe', function(event, slick, direction){
-			  console.log(direction);
-				setTimeout(function(){
-					$(".portfolio__box--dynamic").removeClass("clicked");
-					$(".portfolio__box--dynamic.slick-current").addClass("clicked");
-				},300);
-			});
+			var addDoubleTap = () => {
+				$(".portfolio__box--dynamic").on('click', function(e) {
+					if (!$(this).hasClass("clicked")) {
+						e.preventDefault();
+						$(".portfolio__box--dynamic").removeClass("clicked");
+						$(this).addClass("clicked");
+					} else if ($(this).hasClass("clicked")) {
+						// console.log('go for it');
+					}
+				});
+			}
 
 		},
 		hoverStates() {
@@ -282,6 +288,10 @@ $(document).ready(function() {
 				},
 			});
 			headroom.init();
+			$(".nav--mobile .header__nav-dropdown").on('click', function(){
+				$(this).find(".header__dropdown").toggle();
+				$(this).find(".fa-chevron-down").toggleClass("rotate");
+			})
 		},
 		showMobileNav(event) {
 			event.preventDefault();
