@@ -289,8 +289,18 @@ $(document).ready(function() {
 			});
 			headroom.init();
 			$(".nav--mobile .header__nav-dropdown").on('click', function(){
-				$(this).find(".header__dropdown").toggle();
-				$(this).find(".fa-chevron-down").toggleClass("rotate");
+
+				if($(this).find(".header__dropdown").css('display') === 'none'){
+					$(".header__dropdown").hide();
+					$(".header__nav-dropdown").find(".fa-chevron-down").removeClass("rotate");
+					$(this).find(".header__dropdown").show();
+					$(this).find(".fa-chevron-down").toggleClass("rotate");
+				}
+				else{
+					$(this).find(".header__dropdown").hide();
+					$(this).find(".fa-chevron-down").toggleClass("rotate");
+				}
+
 			})
 		},
 		showMobileNav(event) {
