@@ -61,11 +61,16 @@
   left: 0;
   height: 100%;
   right: 0;
+  @include media-below("md"){
+    justify-content: unset;
+  }
   h2{
     font-weight: 400;
     transition: $base-transition;
     font-size: $text-base;
     margin: 0 0 $space-sm;
+    line-height: 1.2;
+    margin: auto 0 10px;
     @include media-above("lg"){
       max-width: 90%;
     }
@@ -105,11 +110,12 @@
     font-weight: 300;
     font-size: $text-xs - 2;
     color: $brand-primary;
-    margin: 0 0 $space-xs;
+    margin: auto 0 $space-xs;
     display: block;
   }
   h2{
     font-weight: 200;
+    margin: 0 0 10px;
   }
   .details{
     display: block;

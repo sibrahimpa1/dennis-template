@@ -199,7 +199,7 @@ $(document).ready(function() {
 				centerPadding: '0px',
 				slidesToScroll: 1,
 				slidesToShow: 1,
-				speed: 500,
+				speed: 400,
 				variableWidth: false,
 				initialSlide: 0,
 			}
@@ -239,10 +239,18 @@ $(document).ready(function() {
 			slick_on_mobile(servicesSlider, globalSettings);
 
 			$(window).on('load resize', function() {
-				if ($(window).width() >= 960) {
+				console.log('loaaad');
+				console.log($(this).height());
+				if ($(window).width() >= 700 && $(window).height() >= 1025) {
 					$(".portfolio__box--dynamic").removeClass("clicked");
 					$(".portfolio__box--dynamic").unbind(addDoubleTap());
-				} else {
+					return;
+				}
+				else if ($(window).width() <= 813 && $(window).height() <= 415) {
+					$(".portfolio__box--dynamic").bind(addDoubleTap());
+					return;
+				}
+				else {
 					$(".portfolio__box--dynamic").bind(addDoubleTap());
 				}
 			});

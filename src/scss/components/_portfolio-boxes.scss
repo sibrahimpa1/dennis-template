@@ -30,6 +30,8 @@
 		height: auto;
 		outline: none !important;
 		flex-direction: column;
+		position: relative;
+		z-index: 2000;
 		@include media-below("lg") {
 			margin: 0 $space-xs;
 
@@ -86,12 +88,14 @@
 	display: block;
 	margin: 0 0 0 auto;
 	transition: $base-transition;
+	pointer-events: none;
 }
 
 .portfolio__box-image {
 	max-height: 150px;
 	display: block;
 	margin: $space auto;
+	pointer-events: none;
 	transition: $base-transition;
 }
 
@@ -138,7 +142,9 @@
 	width: 100%;
 	left: 0;
 	padding: $space-bump $space 0;
-
+	z-index: -1;
+	height: 100%;
+	display: block;
 	h2 {
 		width: 100%;
 		font-weight: 400;
@@ -275,6 +281,7 @@
 				opacity: 1;
 				transition: $extended-transition;
 				transition-delay: 0.3s;
+				z-index: 200;
 			}
 
 			.portfolio__box-info {
